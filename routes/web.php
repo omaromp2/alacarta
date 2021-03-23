@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\RestaurantController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,6 +30,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    // Restaurants
+    Route::resource('restaurant', RestaurantController::class)
+    ->names([
+        'index' => 'restaurants',
+        'create' => 'restaurant/create'
+    ]);
+
+    // Menu
     Route::resource('menu', MenuController::class)->names([
         'index' => 'menu',
         'create' => 'menu/create'

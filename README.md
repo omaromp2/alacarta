@@ -1,2 +1,2 @@
--A LA Carta 
-App for rest management
+- A LA Carta 
+App for rest menu management

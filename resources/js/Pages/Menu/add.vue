@@ -81,9 +81,13 @@
         props:{
             errors: Object,
         },
+        props:[
+            'rest_id',
+        ],
         data() {
             return {
                 form:{
+                    rest: this.rest_id,
                     name: '',
                     price: '',
                     description:'',

@@ -13,12 +13,17 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Pagina principal
-        $menuItems = menu::all();
 
-        return Inertia::render('Menu/index', compact('menuItems'));
+        $rest_id = $request->input('rest');
+
+        $menuItems = menu::where('rest_id', $rest_id)->get();
+
+        // dd($menuItems);
+
+        return Inertia::render('Menu/index', compact('menuItems', 'rest_id'));
     }
 
     /**
@@ -26,10 +31,14 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         // Pagina formulario de create
-        return Inertia::render('Menu/add');
+        $rest_id = $request->input('rest');
+
+        // dd($rest_id);
+
+        return Inertia::render('Menu/add', compact('rest_id'));
     }
 
     /**
@@ -50,6 +59,7 @@ class MenuController extends Controller
 
         // Si pasa validacion lo creamos
         $item = new menu();
+        $item->rest_id = $request->input('rest');
         $item->name = $request->input('name');
         $item->price = $request->input('price');
         $item->type = 'food';
@@ -57,7 +67,7 @@ class MenuController extends Controller
         $item->is_published = $request->input('isActive');
         $item->save();
 
-        return redirect('/menu');
+        return redirect('/menu?rest=' . $request->input('rest'));
     }
 
     /**
