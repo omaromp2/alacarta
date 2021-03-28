@@ -16,4 +16,14 @@ class restaurant extends Model
         'close',
         'multi_location'
     ];
+
+    /**
+     * Get all of the menuItems for the restaurant
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function menuItems()
+    {
+        return $this->hasMany(menu::class, 'rest_id', 'id');
+    }
 }

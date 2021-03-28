@@ -73,7 +73,7 @@ class RestaurantController extends Controller
      */
     public function show(restaurant $restaurant)
     {
-        //
+        // para ver los restaurantes
     }
 
     /**
@@ -108,5 +108,16 @@ class RestaurantController extends Controller
     public function destroy(restaurant $restaurant)
     {
         //
+    }
+
+
+    public function showClient($restaurant)
+    {
+        # para mostrar restaurante a cliente...
+        $rest = restaurant::findOrFail($restaurant);
+
+        $items = $rest->menuItems;
+
+        return Inertia::render('Restaurants/public', compact('rest', 'items'));
     }
 }

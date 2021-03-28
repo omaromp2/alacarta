@@ -44,3 +44,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'create' => 'menu/create'
     ]);
 });
+
+// Ruta ara q los clientes vean los rest
+Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
