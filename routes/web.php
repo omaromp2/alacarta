@@ -25,6 +25,13 @@ Route::get('/', function () {
     ]);
 });
 
+// Ruta ara q los clientes vean los rest
+Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
+
+// Route::get('qrcode', function () {
+//     return QrCode::size(300)->generate('A basic example of QR code!');
+// });
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
@@ -35,7 +42,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('restaurant', RestaurantController::class)
     ->names([
         'index' => 'restaurants',
-        'create' => 'restaurant/create'
+        'create' => 'restaurant/create',
+        'view' => 'restaurant/{id}'
     ]);
 
     // Menu
@@ -43,7 +51,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'index' => 'menu',
         'create' => 'menu/create'
     ]);
-});
 
-// Ruta ara q los clientes vean los rest
-Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
+    // QR gen
+    Route::get('qr/{rest}', [RestaurantController::class, 'generateQR']);
+});

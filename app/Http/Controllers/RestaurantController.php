@@ -6,6 +6,7 @@ use App\Models\restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class RestaurantController extends Controller
 {
@@ -19,6 +20,7 @@ class RestaurantController extends Controller
         // Primera vista
         // Traemos los restaurantes q hemos creado... por mi usuario.
         $userID = Auth::user()->id;
+        // $rests = restaurant::where('owner_id', $userID)->paginate(2);
         $rests = restaurant::where('owner_id', $userID)->get();
 
         return Inertia::render('Restaurants/index', compact('rests'));
@@ -62,6 +64,8 @@ class RestaurantController extends Controller
 
         $rest->save();
 
+        // $request->session()->flash('msg', 'Restaurant created.');
+
         return redirect('/restaurant');
     }
 
@@ -74,6 +78,7 @@ class RestaurantController extends Controller
     public function show(restaurant $restaurant)
     {
         // para ver los restaurantes
+        dd($restaurant);
     }
 
     /**
@@ -116,8 +121,17 @@ class RestaurantController extends Controller
         # para mostrar restaurante a cliente...
         $rest = restaurant::findOrFail($restaurant);
 
-        $items = $rest->menuItems;
+        $items = $rest->menuItems->where('is_published', 1);
+
+        // dd($items);
 
         return Inertia::render('Restaurants/public', compact('rest', 'items'));
+    }
+
+    public function generateQR($rest)
+    {
+        # generamos el qr del rest...
+        // dd($rest);
+        return QrCode::size(300)->generate('https://be1326204a91.ngrok.io/rest/' . $rest);
     }
 }

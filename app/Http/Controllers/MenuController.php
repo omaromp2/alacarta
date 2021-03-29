@@ -19,6 +19,8 @@ class MenuController extends Controller
 
         $rest_id = $request->input('rest');
 
+        // dd($rest_id);
+
         $menuItems = menu::where('rest_id', $rest_id)->get();
 
         // dd($menuItems);
@@ -78,7 +80,9 @@ class MenuController extends Controller
      */
     public function show(menu $menu)
     {
-        //
+        // Para ver el item perse
+        // dd($menu);
+        return Inertia::render('Menu/view', compact('menu'));
     }
 
     /**
@@ -89,7 +93,7 @@ class MenuController extends Controller
      */
     public function edit(menu $menu)
     {
-        //
+        // editar
     }
 
     /**
@@ -101,7 +105,22 @@ class MenuController extends Controller
      */
     public function update(Request $request, menu $menu)
     {
-        //
+        // Actualizamos
+
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+        ]);
+
+        $menu->name = $request->input('name');
+        $menu->price = $request->input('price');
+        $menu->description = $request->input('description');
+        $menu->is_published = $request->input('isActive');
+
+        $menu->save();
+
+        return redirect('/menu?rest=' . $menu->rest_id);
     }
 
     /**

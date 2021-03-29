@@ -23,9 +23,9 @@
                                 <jet-nav-link :href="route('restaurants')" :active="route().current('restaurants')">
                                     Restaurants
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('menu')" :active="route().current('menu')">
-                                    Menu
-                                </jet-nav-link>
+                                <!-- <jet-nav-link v-if="$page.props.user.is_admin" :href="route('menu')" :active="route().current('menu')">
+                                    Soy admin
+                                </jet-nav-link> -->
                             </div>
                         </div>
 

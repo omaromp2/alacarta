@@ -1,5 +1,5 @@
 <template>
-    <app-layout>
+    <!-- <app-layout> -->
         <section class="text-gray-600 body-font">
           <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
@@ -7,11 +7,7 @@
               <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                   {{ rest.name }}
               </h1>
-              <p class="mb-8 leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&amp;B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.</p>
-              <div class="flex justify-center">
-                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
-              </div>
+              <p class="mb-8 leading-relaxed">Your slogan gere</p>
             </div>
           </div>
         </section>
@@ -28,54 +24,67 @@
                     <div v-else>
                         <!-- {{ rest.menuItems }} -->
 
-                        <!-- Tabla  -->
 
-                        <table class="table-auto w-full text-left whitespace-no-wrap">
-                            <thead>
-                                <tr>
-                                    <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
-                                        Name</th>
-                                    <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        type</th>
-                                    <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        description</th>
-                                    <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        price</th>
-                                    <th
-                                        class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br">
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in items" :key="item.id"  >
-                                    <td class="px-4 py-3">{{ item.name }}</td>
-                                    <td class="px-4 py-3">{{ item.type }}</td>
-                                    <td class="px-4 py-3"> {{ item.description }} </td>
-                                    <td class="px-4 py-3 text-lg text-gray-900">{{ item.price }}</td>
-                                    <td class="w-10 text-center">
-                                        <!-- <input name="plan" type="radio"> -->
-                                    </td>
-                                </tr>
 
-                            </tbody>
-                        </table>
+                        <div v-for="item in items" :key="item.id" class="flex max-w mx-auto my-2 py-4 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                            <div class="w-2/3 p-4 md:p-4">
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div>
+                                        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
+                                            {{ item.name }}
+                                        </h1>
+                                    </div>
+                                    <div></div>
+                                    <div>
+                                        <div class="flex justify-between mt-3 item-center">
+                                            <h1 class="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">$ {{ item.price }} </h1>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                    {{ item.description }}
+                                </p>
+
+                                <!-- <div class="flex mt-2 item-center">
+                                    <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                    </svg>
+
+                                    <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                    </svg>
+
+                                    <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                    </svg>
+
+                                    <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                    </svg>
+
+                                    <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                    </svg>
+                                </div> -->
+
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </section>
 
-    </app-layout>
+    <!-- </app-layout> -->
 </template>
 <script>
-    import AppLayout from '@/Layouts/AppLayout'
+    // import AppLayout from '@/Layouts/AppLayout'
     export default {
         components: {
-        AppLayout,
+        // AppLayout,
     },
     props:['rest', 'items']
 }
