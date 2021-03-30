@@ -64,7 +64,7 @@ class MenuController extends Controller
         $item->rest_id = $request->input('rest');
         $item->name = $request->input('name');
         $item->price = $request->input('price');
-        $item->type = 'food';
+        $item->type = $request->input('type');
         $item->description = $request->input('description');
         $item->is_published = $request->input('isActive');
         $item->save();
@@ -132,5 +132,13 @@ class MenuController extends Controller
     public function destroy(menu $menu)
     {
         //
+    }
+
+    public function typeGetter($rest_id)
+    {
+        # code...
+        $types = menu::where('rest_id', $rest_id)->pluck('type', 'type');
+        // dd($types);
+        return $types;
     }
 }

@@ -12,6 +12,16 @@
           </div>
         </section>
 
+        <section>
+            <select class="w-3/4 mx-auto block bg-gray-100 bg-opacity-50 rounded border border-gray-300
+                 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base
+                 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            v-model="selected" @change="filter(selected)" >
+              <option v-for="type in types" :key="type"
+              :value="type" > {{ type }} </option>
+            </select>
+        </section>
+
         <section class="py-4" >
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -24,10 +34,10 @@
                     <div v-else>
                         <!-- {{ rest.menuItems }} -->
 
-
-
-                        <div v-for="item in items" :key="item.id" class="flex max-w mx-auto my-2 py-4 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                        <div v-for="item in items" :key="item.id" class="flex max-w mx-auto my-4 py-4 overflow-hidden bg-white
+                         rounded-lg shadow-lg dark:bg-gray-800 ">
                             <div class="w-2/3 p-4 md:p-4">
+
                                 <div class="grid grid-cols-3 gap-4">
                                     <div>
                                         <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
@@ -86,7 +96,13 @@
         components: {
         // AppLayout,
     },
-    props:['rest', 'items']
+    props:['rest', 'items', 'types'],
+    methods:{
+        filter(selected){
+            // alert("Voy a: " + selected );
+            window.location.href = "/rest/ " + this.rest.id + "?filter=" + selected;
+        }
+    }
 }
 </script>
 <style scoped>

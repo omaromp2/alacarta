@@ -116,22 +116,49 @@ class RestaurantController extends Controller
     }
 
 
-    public function showClient($restaurant)
+    public function showClient($restaurant, Request $request)
     {
         # para mostrar restaurante a cliente...
+
         $rest = restaurant::findOrFail($restaurant);
 
-        $items = $rest->menuItems->where('is_published', 1);
+        // $items = ($request->input('filter')) ? $rest->menuItems
+        // ->where('is_published', 1)
+        // ->where('type', $request->input('filter'))
+        // :
+        // $rest->menuItems->where('is_published', 1) ;
+
+        $filter = $request->input('filter');
+
+        if ($filter) {
+            # Si hay filtro ...
+
+            if ($filter == 'all') {
+                # code...
+                $items = $rest->menuItems->where('is_published', 1);
+            } else {
+                # code...
+                $items = $rest->menuItems
+                ->where('is_published', 1)
+                ->where('type', $request->input('filter'));
+            }
+        } else {
+            # no hay filtro...
+            $items = $rest->menuItems->where('is_published', 1);
+        }
 
         // dd($items);
 
-        return Inertia::render('Restaurants/public', compact('rest', 'items'));
+        $types = $items->pluck('type', 'type');
+        $types->push('all');
+
+        return Inertia::render('Restaurants/public', compact('rest', 'items', 'types'));
     }
 
     public function generateQR($rest)
     {
         # generamos el qr del rest...
         // dd($rest);
-        return QrCode::size(300)->generate('https://be1326204a91.ngrok.io/rest/' . $rest);
+        return QrCode::size(300)->generate('https://02a8a319f9c8.ngrok.io/rest/' . $rest);
     }
 }

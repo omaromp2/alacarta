@@ -54,4 +54,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // QR gen
     Route::get('qr/{rest}', [RestaurantController::class, 'generateQR']);
+
+    // Types
+    Route::get('type/{rest_id}', [MenuController::class, 'typeGetter']);
 });
