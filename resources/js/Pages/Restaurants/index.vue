@@ -14,7 +14,7 @@
                     <a :href="route('restaurant/create')"
                        class="flex items-center px-2 py-2 font-medium tracking-wide
                        text-white capitalize transition-colors duration-200
-                       transform bg-blue-900 rounded-md dark:bg-gray-800 hover:bg-blue-700
+                       transform bg-navy rounded-md dark:bg-gray-800 hover:bg-blue-700
                        dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-700
                        dark:focus:bg-gray-700">
 
