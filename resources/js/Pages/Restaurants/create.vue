@@ -6,9 +6,13 @@
             </h2>
         </template>
         <div class='py-12'>
+
             <div class='max-w-7xl mx-auto sm:px-6 lg:px-8'>
                 <div class='bg-white overflow-hidden shadow-xl sm:rounded-lg'>
 
+                    <img src="../../../../storage/app/public/img/img1.svg"
+                    alt="img1"
+                    class=" py-2 w-2/5 h-2/5 block mx-auto " >
 
                     <form @submit.prevent="submit">
                         <div class="container px-5 py-24 mx-auto">

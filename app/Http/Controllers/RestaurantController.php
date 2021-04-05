@@ -19,11 +19,13 @@ class RestaurantController extends Controller
     {
         // Primera vista
         // Traemos los restaurantes q hemos creado... por mi usuario.
-        $userID = Auth::user()->id;
+        $user_id = Auth::user()->id;
         // $rests = restaurant::where('owner_id', $userID)->paginate(2);
-        $rests = restaurant::where('owner_id', $userID)->get();
+        // $rests = restaurant::where('owner_id', $userID)->get();
 
-        return Inertia::render('Restaurants/index', compact('rests'));
+        // dd($rests);
+
+        return Inertia::render('Restaurants/index', compact('user_id'));
     }
 
     /**
@@ -52,7 +54,7 @@ class RestaurantController extends Controller
         $request->validate([
             'name' => 'required',
             'open' => 'required',
-            'close' => 'required'
+            'close' => 'required',
         ]);
 
         $rest = new restaurant();
@@ -115,7 +117,6 @@ class RestaurantController extends Controller
         //
     }
 
-
     public function showClient($restaurant, Request $request)
     {
         # para mostrar restaurante a cliente...
@@ -139,8 +140,8 @@ class RestaurantController extends Controller
             } else {
                 # code...
                 $items = $rest->menuItems
-                ->where('is_published', 1)
-                ->where('type', $request->input('filter'));
+                    ->where('is_published', 1)
+                    ->where('type', $request->input('filter'));
             }
         } else {
             # no hay filtro...
@@ -159,6 +160,15 @@ class RestaurantController extends Controller
     {
         # generamos el qr del rest...
         // dd($rest);
-        return QrCode::size(300)->generate('https://02a8a319f9c8.ngrok.io/rest/' . $rest);
+        return QrCode::size(300)->generate('https://8affc5dd75b2.ngrok.io/rest/' . $rest);
+    }
+
+    public function getRest($user_id)
+    {
+        # code...
+        // dd($user_id);
+        $rests = restaurant::where('owner_id', $user_id)->paginate(2);
+
+        return $rests;
     }
 }

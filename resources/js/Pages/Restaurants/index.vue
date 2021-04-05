@@ -12,7 +12,11 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                     <a :href="route('restaurant/create')"
-                       class="flex items-center px-2 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md dark:bg-gray-800 hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700">
+                       class="flex items-center px-2 py-2 font-medium tracking-wide
+                       text-white capitalize transition-colors duration-200
+                       transform bg-blue-900 rounded-md dark:bg-gray-800 hover:bg-blue-700
+                       dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-700
+                       dark:focus:bg-gray-700">
 
 
                         <svg class="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -41,6 +45,7 @@
             <img class="object-cover object-center w-full h-56"
                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                  alt="avatar">
+
             <div class="px-6 py-4">
                 <h1 class="text-xl font-semibold text-gray-800 dark:text-white"> {{ rest.name }} </h1>
 
@@ -95,24 +100,40 @@
 
                 </div>
 
+                <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+
+                    <h1 class="px-2 text-sm">
+                        <a :href="'rest/' + rest.id "> Preview </a>
+                    </h1>
+
+                </div>
+
             </div>
         </div>
 
 
-        <center>
-
-            {{ rests.links }}
-
-            <div class="flex">
-                <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-500 bg-white rounded-md cursor-not-allowed dark:bg-gray-800 dark:text-gray-600">
-                    previous
-                </a>
-
-                <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-gray-200">
-                    Next
-                </a>
+        <div class="grid grid-cols-3 gap-4 my-3 ">
+          <div></div>
+          <!-- <div></div> -->
+          <div>
+              <div class="flex flex-wrap -mb-1">
+                <template v-for="link in links.links" :key="link" >
+                    <div v-if="link.url == null" class="mr-1 mb-1 px-4 py-3 text-sm leading-4 text-gray-400 border rounded" v-html="link.label" />
+                    <div v-else class="mr-1 mb-1 px-4 py-3 text-sm leading-4 border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500"
+                    :class="{ 'bg-white': link.active }" v-html="link.label" @click="restGetter(user_id, link.url)" />
+                </template>
             </div>
-        </center>
+          </div>
+        </div>
+
+
+
+        <!-- <paging :links="links" ></paging> -->
 
     </app-layout>
 </template>
@@ -120,11 +141,49 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
 
+    import paging from '@/components/paging'
+
     export default {
-        props: ['rests'],
+        props: ['user_id'],
         components: {
             AppLayout,
+            paging,
         },
+        data(){
+            return {
+                rests:[],
+                id: this.user_id,
+                links:[]
+            }
+        },
+        mounted(){
+            this.restGetter(this.id)
+        },
+        methods:{
+            restGetter(id, page){
+                console.log(id);
+                let uri = '';
+
+                console.log(page);
+
+                if (page == null) {
+                    uri = "/restBack/" + id;
+                } else {
+                    uri = page;
+                }
+
+
+                axios.get(uri)
+                .then(resp => {
+                    console.log(resp);
+                    this.links = resp.data;
+                    this.rests = this.links.data;
+
+                })
+                .catch(err => {console.log(err);});
+            },
+        },
+
     }
 
 </script>

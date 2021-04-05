@@ -57,4 +57,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Types
     Route::get('type/{rest_id}', [MenuController::class, 'typeGetter']);
+
+    // Para obtener rest detras de las cortinas
+    Route::get('restBack/{user_id}', [RestaurantController::class, 'getRest']);
 });
