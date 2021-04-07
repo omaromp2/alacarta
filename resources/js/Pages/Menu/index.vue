@@ -8,8 +8,8 @@
 
         <div class="py-12">
 
-            <div class="grid grid-flow-col auto-cols-max">
-                <div>Back</div>
+            <!-- <div class="grid grid-flow-col auto-cols-max">
+                <div></div>
                 <div></div>
                 <div>
                     <a class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
@@ -19,7 +19,7 @@
                         </svg> Add
                     </a>
                 </div>
-            </div>
+            </div>  -->
 
 
             <br>
@@ -39,22 +39,37 @@
                             <thead>
                                 <tr>
                                     <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-navy rounded-tl rounded-bl">
                                         Name</th>
                                     <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        type</th>
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-navy">
+                                        Group</th>
                                     <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        description</th>
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-navy">
+                                        Description</th>
                                     <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                        price</th>
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-navy">
+                                        Price</th>
                                     <th
-                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-navy">
                                         Published</th>
+
+                                    <!-- <th
+                                        class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                          <a class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" :href="'/menu/create?rest=' + rest_id ">
+                                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg> Add
+                                        </a>
+                                    </th> -->
                                     <th
-                                        class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br">
+                                        class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-navy rounded-tr rounded-br">
+
+                                        <a class="flex mx-auto text-white bg-navy border-0 py-2 px-8 focus:outline-none hover:bg-teal rounded text-lg" :href="'/menu/create?rest=' + rest_id ">
+                                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg> Add
+                                        </a>
 
                                     </th>
                                 </tr>
@@ -78,7 +93,7 @@
                                     <td class="w-10 text-center">
                                         <!-- <input name="plan" type="radio"> -->
                                         <a :href="'/menu/' + item.id ">
-                                            <svg class="text-purple-500 hover:text-purple-900 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg class="text-purple-500 hover:text-purple-900 h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                             </svg>
                                         </a>
