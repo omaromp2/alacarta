@@ -139,6 +139,13 @@ class MenuController extends Controller
         # code...
         $types = menu::where('rest_id', $rest_id)->pluck('type', 'type');
         // dd($types);
+
+        if ($types->count() == 0) {
+            # No hay forzamos ...
+            $types['food'] = 'food';
+        }
+
+
         return $types;
     }
 }

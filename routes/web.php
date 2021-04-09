@@ -60,4 +60,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Para obtener rest detras de las cortinas
     Route::get('restBack/{user_id}', [RestaurantController::class, 'getRest']);
+
+    Route::get('tester', function () {
+        return Inertia::render('tester');
+    });
 });
