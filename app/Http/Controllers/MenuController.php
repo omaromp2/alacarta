@@ -69,7 +69,11 @@ class MenuController extends Controller
         $item->is_published = $request->input('isActive');
         $item->save();
 
-        return redirect('/menu?rest=' . $request->input('rest'));
+        // session()->flash('flash.banner', 'Yay you created a new Restaurant!');
+        // session()->flash('flash.bannerStyle', 'success');
+
+        return redirect('/menu?rest=' . $request->input('rest'))
+        ->with('message', 'Yay you created a Restaurant!');
     }
 
     /**

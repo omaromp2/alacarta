@@ -68,7 +68,8 @@ class RestaurantController extends Controller
 
         // $request->session()->flash('msg', 'Restaurant created.');
 
-        return redirect('/restaurant');
+        return redirect('/restaurant')
+        ->with('message', 'Yay you created a new Restaurant!!!');
     }
 
     /**

@@ -1,4 +1,9 @@
 <template>
+
+    <div v-if="$page.props.flash.message" class="alert">
+      {{ $page.props.flash.message }}
+    </div>
+
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
