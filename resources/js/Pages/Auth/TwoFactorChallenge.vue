@@ -1,7 +1,7 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-            <jet-authentication-card-logo />
+            <jet-authentication-card-logo class="block mx-auto w-96 max-w-7xl" />
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
