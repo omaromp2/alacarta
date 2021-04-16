@@ -92,7 +92,13 @@ class RestaurantController extends Controller
      */
     public function edit(restaurant $restaurant)
     {
-        //
+        // para ver el restaurante
+        return Inertia::render(
+            'Restaurants/edit',
+            [
+            'rest' => $restaurant
+        ]
+        );
     }
 
     /**
@@ -104,7 +110,29 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, restaurant $restaurant)
     {
-        //
+        // Reciclage de codigo
+        // dd($restaurant);
+
+        $request->validate([
+            'name' => 'required',
+            'open' => 'required',
+            'close' => 'required',
+        ]);
+
+
+        $rest = $restaurant;
+        $rest->owner_id = Auth::user()->id;
+        $rest->name = $request->input('name');
+        $rest->open = $request->input('open');
+        $rest->close = $request->input('close');
+        $rest->multi_location = $request->input('isActive');
+
+        $rest->save();
+
+        // $request->session()->flash('msg', 'Restaurant created.');
+
+        return redirect('/restaurant')
+        ->with('message', 'Yay you fixed your Restaurant!!!');
     }
 
     /**
@@ -124,11 +152,14 @@ class RestaurantController extends Controller
 
         $rest = restaurant::findOrFail($restaurant);
 
+        // dd($rest);
+
         // $items = ($request->input('filter')) ? $rest->menuItems
         // ->where('is_published', 1)
         // ->where('type', $request->input('filter'))
         // :
-        // $rest->menuItems->where('is_published', 1) ;
+
+        // dd($rest->menuItems->where('is_published', 1)) ;
 
         $filter = $request->input('filter');
 
@@ -151,7 +182,7 @@ class RestaurantController extends Controller
 
         // dd($items);
 
-        $types = $items->pluck('type', 'type');
+        $types = $rest->menuItems->where('is_published', 1)->pluck('type', 'type');
         $types->push('all');
 
         return Inertia::render('Restaurants/public', compact('rest', 'items', 'types'));

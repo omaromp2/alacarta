@@ -56,6 +56,7 @@ class MenuController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required',
+            'type' => 'required',
             'description' => 'required',
         ]);
 
@@ -73,7 +74,7 @@ class MenuController extends Controller
         // session()->flash('flash.bannerStyle', 'success');
 
         return redirect('/menu?rest=' . $request->input('rest'))
-        ->with('message', 'Yay you created a Restaurant!');
+        ->with('message', 'Yay you added a new restaurant item');
     }
 
     /**
@@ -114,6 +115,7 @@ class MenuController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required',
+            'type' => 'required',
             'description' => 'required',
         ]);
 

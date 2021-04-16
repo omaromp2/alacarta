@@ -1,9 +1,5 @@
 <template>
 
-    <div v-if="$page.props.flash.message" class="alert">
-      {{ $page.props.flash.message }}
-    </div>
-
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -25,6 +21,13 @@
                     </a>
                 </div>
             </div>  -->
+
+
+            <div v-if="$page.props.flash.message">
+                <success-flash>
+                    {{ $page.props.flash.message }}
+                </success-flash>
+            </div>
 
 
             <br>
@@ -123,11 +126,13 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import JetBtn from '@/Jetstream/Button'
+    import SuccessFlash from '@/components/success-flash'
 
     export default {
         components: {
             AppLayout,
-            JetBtn
+            JetBtn,
+            SuccessFlash,
 
         },
         props: ['menuItems', 'rest_id'],

@@ -7,6 +7,24 @@
         </template>
 
 
+        <div v-if=" Object.keys($page.props.errors).length > 0"
+            class="flex w-3/4 mx-auto my-3 overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div class="flex items-center justify-center w-12 bg-red-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"/>
+                </svg>
+            </div>
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">
+                        <jet-validation-errors></jet-validation-errors>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- Formulario  -->
 
@@ -29,6 +47,7 @@
                                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
                                 <input type="text" id="name" name="name" v-model="form.name"
                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <jet-input-error :message="$page.props.errors.name" class="mt-2" />
                             </div>
                         </div>
                         <div class="p-2 w-1/2">
@@ -36,6 +55,7 @@
                                 <label for="price" class="leading-7 text-sm text-gray-600">Price</label>
                                 <input type="number" min="1" step="any" id="price" name="price" v-model="form.price"
                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <jet-input-error :message="$page.props.errors.price" class="mt-2" />
                             </div>
                         </div>
 
@@ -50,6 +70,7 @@
                                     <option v-for="type in types" :key="type"
                                     :value="type" > {{ type }} </option>
                                   </select>
+                                  <jet-input-error :message="$page.props.errors.type" class="mt-2" />
                             </div>
                         </div>
 
@@ -72,6 +93,7 @@
                                 <label for="description" class="leading-7 text-sm text-gray-600">Description</label>
                                 <textarea id="description" name="description" v-model="form.description"
                                           class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                <jet-input-error :message="$page.props.errors.description" class="mt-2" />
                             </div>
                         </div>
 
@@ -157,13 +179,15 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
+    import JetInputError from '@/Jetstream/InputError'
+    import JetValidationErrors from '@/Jetstream/ValidationErrors'
 
     export default {
         components: {
             AppLayout,
-        },
-        props:{
-            errors: Object,
+            JetInputError,
+            JetValidationErrors
+
         },
         props:[
             'rest_id',
