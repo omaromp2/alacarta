@@ -15,8 +15,7 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('rest_id')->references('id')->on('restaurants')->onDelete('cascade');
-            $table->string('rest_id');
+            $table->foreignId('rest_id')->constrained('restaurants', 'id');
             $table->string('name');
             $table->string('type');
             $table->longText('description')->nullable();

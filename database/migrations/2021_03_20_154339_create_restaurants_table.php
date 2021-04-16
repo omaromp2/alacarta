@@ -15,13 +15,13 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('owner_id')->references('id')->on('users');
-            $table->string('owner_id');
+            $table->foreignId('owner_id')->constrained('users', 'id');
             $table->string('name');
             $table->time('open')->nullable();
             $table->time('close')->nullable();
             $table->boolean('multi_location')->default(false);
             $table->string('primary_location')->nullable()->default('text');
+            $table->longText('profileImg')->nullable();
             $table->timestamps();
         });
     }
