@@ -203,4 +203,26 @@ class RestaurantController extends Controller
 
         return $rests;
     }
+
+    public function imgUpload(Request $request, $rest_id)
+    {
+        # Upload de imagenes ...
+        $img = $request->input('img');
+
+        $request->validate([
+            'img' => 'required',
+            ]);
+
+        $restaurant = restaurant::findOrFail($rest_id);
+        // Actualizamos
+        $restaurant->profileImg = $img;
+        $restaurant->save();
+        // return redirect('/restaurant')
+        // ->with('message', 'Yay you added a image to your Restaurant!!!');
+
+        return response()->json([
+            'code' => 200,
+            'msg' => 'Image uploaded successfully'
+        ], 200);
+    }
 }

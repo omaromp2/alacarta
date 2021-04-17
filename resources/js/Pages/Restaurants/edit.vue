@@ -42,6 +42,7 @@
                             </div>
                             <div class="lg:w-1/2 md:w-2/3 mx-auto">
                                 <div class="flex flex-wrap -m-2">
+
                                     <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -95,6 +96,44 @@
                 </div>
             </div>
         </div>
+
+        <div class=" py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
+             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="p-2 w-full">
+                    <div class="relative">
+                        <div class="container px-5 py-24 mx-auto">
+                            <div class="flex flex-col text-center w-full mb-12">
+                                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Edit your Restaurant Image
+                                </h1>
+                                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fix your Restaurant Logo</p>
+                            </div>
+                        </div>
+                        <!-- <label for="img" class="leading-7 text-sm text-gray-600">Image</label>
+                        <input type="file" id="img" name="img" @change="imgSubmit" accept="image/*"
+                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500
+                            focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <button @click="imgUpload" >Test</button> -->
+
+                        <img v-if="img.length == 0" :src="rest.profileImg" alt="">
+
+                        <vue-base64-file-upload
+                            class="v1"
+                            accept="image/png,image/jpeg"
+                            image-class="v1-image"
+                            input-class="v1-input"
+                            :max-size="customImageMaxSize"
+                            @size-exceeded="onSizeExceeded"
+                            @file="onFile"
+                            @load="onLoad" />
+
+                            <jet-button @click="imgUpload" >Test</jet-button>
+
+                    </div>
+                </div>
+
+             </div>
+        </div>
+
     </app-layout>
 </template>
 
@@ -103,12 +142,16 @@
     import AppLayout from '@/Layouts/AppLayout'
     import JetInputError from '@/Jetstream/InputError'
     import JetValidationErrors from '@/Jetstream/ValidationErrors'
+    import JetButton from '@/Jetstream/Button'
+    import VueBase64FileUpload from 'vue-base64-file-upload'
 
     export default {
         components: {
             AppLayout,
             JetInputError,
             JetValidationErrors,
+            VueBase64FileUpload,
+            JetButton,
         },
 
         props:['restaurant'],
@@ -118,6 +161,8 @@
         }, //variables from laravel
         data() {
             return {
+                customImageMaxSize: 2, // megabytes
+                img: [],
                 form: {
                     name:this.rest.name,
                     open: this.rest.open,
@@ -130,7 +175,62 @@
         methods: {
             submit(){
                 this.$inertia.put('/restaurant/' + this.rest.id , this.form);
+            },
+            imgSubmit(event){
+                // console.log(event);
+                const imageFile = event;
+                const imgBlob = imageFile.target.files[0];
+                const reader = new FileReader();
+
+                reader.addEventListener = ("load", function() {
+                    this.img = imageFile.target.result
+                }, false);
+
+                // reader.readAsDataURL(imgBlob);
+
+                if (imgBlob) {
+                    reader.readAsDataURL(imgBlob);
+                }
+
+                console.log( "Blon:", this.img);
+                // console.log("PIPI:",pipi);
+
+            },
+            imgUpload(){
+                // console.log('A subir' ,this.img);
+                const param = {
+                    'img': this.img
+                };
+                axios.post('/imgrest/' + this.rest.id, param )
+                .then(resp =>{
+                    console.log(resp.data);
+                    if (resp.data.code == 200) {
+                        alert("Lo subi");
+                        // location.reload('/restaurant');
+                        window.location.href = "/restaurant";
+                    } else {
+                        alert("Error");
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+            },
+
+            onFile(file) {
+              console.log("On File:",file); // file object
+            },
+
+            onLoad(dataUri) {
+              console.log( "On Load:", dataUri); // data-uri string
+                //   paso el valor
+                this.img = dataUri;
+            },
+
+            onSizeExceeded(size) {
+              alert(`Image ${size}Mb size exceeds limits of ${this.customImageMaxSize}Mb!`);
             }
+
         }
     }
 

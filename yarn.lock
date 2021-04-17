@@ -6702,6 +6702,13 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-base64-file-upload@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vue-base64-file-upload/-/vue-base64-file-upload-1.0.4.tgz#1ef8e44c2171cd1e74197baf143715288f66a012"
+  integrity sha1-HvjkTCFxzR50GXuvFDcVKI9moBI=
+  dependencies:
+    vue "^2.1.10"
+
 vue-loader@^16.1.2:
   version "16.1.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-16.1.2.tgz#5c03b6c50d2a5f983c7ceba15c50d78ca2b298f4"
@@ -6710,6 +6717,11 @@ vue-loader@^16.1.2:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue@^2.1.10:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
+  integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
 
 vue@^3.0.5:
   version "3.0.7"

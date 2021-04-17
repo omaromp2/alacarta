@@ -64,4 +64,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('tester', function () {
         return Inertia::render('tester');
     });
+
+    // Upload imagenes de rest
+    Route::post('imgrest/{id}', [RestaurantController::class, 'imgUpload']);
 });

@@ -179,7 +179,7 @@
     </app-layout>
 </template>
 <script>
-    // TODO Fix bug - Modal is submiting data
+    ///// TODO Fix bug - Modal is submiting data
     import AppLayout from '@/Layouts/AppLayout'
     import JetInputError from '@/Jetstream/InputError'
     import JetValidationErrors from '@/Jetstream/ValidationErrors'

@@ -49,7 +49,13 @@
 
         <div v-for="rest in rests" :key="rest.id"
              class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-4 ">
-            <img class="object-cover object-center w-full h-56"
+            <!-- <img class="object-cover object-center w-full h-56"
+                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                 alt="avatar"> -->
+
+            <img v-if="rest.profileImg" class="object-cover object-center w-full h-56"
+                 :src="rest.profileImg" alt="avatar">
+            <img  v-else class="object-cover object-center w-full h-56"
                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                  alt="avatar">
 
