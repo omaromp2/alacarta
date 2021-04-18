@@ -25,6 +25,8 @@ Route::get('/', function () {
     ]);
 });
 
+Route::view('landing', 'landing');
+
 // Ruta ara q los clientes vean los rest
 Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
 
