@@ -25,7 +25,7 @@
 {{-- Header --}}
 <header class="text-gray-600 body-font" id="home" >
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+        <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto ">
             <a class="mr-5 hover:text-gray-900" href="#home" >Home</a>
             <a class="mr-5 hover:text-gray-900" href="#features" >Features</a>
             <a class="mr-5 hover:text-gray-900" href="#testimonial" >Testimonial</a>
@@ -50,47 +50,38 @@
 
 <body class="font-sans antialiased">
     {{-- Hero section --}}
-    <section class="text-gray-600 body-font" id="features" >
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div
-                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Present your Menu
-                    <br class="hidden lg:inline-block">The right way!
-                </h1>
-                <p class="mb-8 leading-relaxed">Present your menu in the right way with the right tool for the job.</p>
-                <div class="flex justify-center">
-                    <button
-                            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                    <button
-                            class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
-                </div>
-            </div>
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
 
-                {{-- <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"> --}}
-                <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1529270296466-b09d5f5c2bab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWVudXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-            </div>
+    {{-- Header2 --}}
+<section id="Hero"class="text-gray-100 body-font">
+    <div class="mx-auto flex px-5 py-60 items-center justify-center flex-col bg-black bg-center bg-cover bg-opacity-75">
+      {{-- <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1529270296466-b09d5f5c2bab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWVudXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"> --}}
+      <div class="text-center lg:w-2/3 w-full">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Your Menu</h1>
+        <p class="mb-8 leading-relaxed">Present your menu the right way!</p>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+{{-- End  --}}
 
     {{-- End of hero  --}}
     {{-- Features section  --}}
-    <section class="text-gray-600 body-font">
+    <section id="features" class="text-gray-600 body-font">
+
+        <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium
+        text-gray-700 text-center py-12" >How it works?</h2>
+
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
             <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-                {{-- <img alt="feature" class="object-cover object-center h-full w-full"
-                     src="https://dummyimage.com/460x500"> --}}
-                     <img alt="feature" class="object-cover object-center h-full w-full"
+                     <img alt="feature" class="object-cover object-center h-4/5 w-full rounded-lg"
                      src="{{ asset('images/Spash.jpg') }}">
             </div>
             <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
                 <div class="flex flex-col mb-10 lg:items-start items-center">
                     <div
-                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
-                        {{-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg> --}}
+                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-orange text-teal mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                           </svg>
@@ -98,7 +89,7 @@
                     <div class="flex-grow">
                         <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Prepare your Menu</h2>
                         <p class="leading-relaxed text-base">Prepare your menu in a simple and painless way.</p>
-                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                        <a class="mt-3 text-teal inline-flex items-center">Learn More
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                  stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -108,14 +99,7 @@
                 </div>
                 <div class="flex flex-col mb-10 lg:items-start items-center">
                     <div
-                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
-                        {{-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <circle cx="6" cy="6" r="3"></circle>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                        </svg> --}}
-
+                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-teal text-orange mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                           </svg>
@@ -124,7 +108,7 @@
                     <div class="flex-grow">
                         <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Your client arrives</h2>
                         <p class="leading-relaxed text-base">Let your client scan the menu QR code.</p>
-                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                        <a class="mt-3 text-teal inline-flex items-center">Learn More
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                  stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -134,12 +118,7 @@
                 </div>
                 <div class="flex flex-col mb-10 lg:items-start items-center">
                     <div
-                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
-                        {{-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg> --}}
+                         class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-orange text-teal mb-5">
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -149,7 +128,7 @@
                     <div class="flex-grow">
                         <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Happy User</h2>
                         <p class="leading-relaxed text-base">Let the menu present it self to the user. </p>
-                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                        <a class="mt-3 text-teal inline-flex items-center">Learn More
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                  stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -165,14 +144,14 @@
 
     {{-- testimonial --}}
 
-    <section class="text-gray-600 body-font" id="testimonial" >
+    <section class="text-gray-600 body-font bg-gray-100 " id="testimonial" >
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
               <div class="h-full text-center">
                 <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/302x302">
                 <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                <span class="inline-block h-1 w-10 rounded bg-navy mt-6 mb-4"></span>
                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HOLDEN CAULFIELD</h2>
                 <p class="text-gray-500">Senior Product Designer</p>
               </div>
@@ -181,7 +160,7 @@
               <div class="h-full text-center">
                 <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/300x300">
                 <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                <span class="inline-block h-1 w-10 rounded bg-teal mt-6 mb-4"></span>
                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">ALPER KAMU</h2>
                 <p class="text-gray-500">UI Develeoper</p>
               </div>
@@ -190,7 +169,7 @@
               <div class="h-full text-center">
                 <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://dummyimage.com/305x305">
                 <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                <span class="inline-block h-1 w-10 rounded bg-orange mt-6 mb-4"></span>
                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
                 <p class="text-gray-500">CTO</p>
               </div>
@@ -587,5 +566,15 @@
       </footer>
 
 </body>
+
+<style>
+    #Hero {
+        background-image: url("https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        z-index: -1;
+    }
+</style>
 
 </html>
