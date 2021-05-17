@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::view('landing', 'landing');
-Route::view('landing2', 'landing2');
+// Route::view('landing2', 'landing2');
 
 // Ruta ara q los clientes vean los rest
 Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);

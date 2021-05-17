@@ -1,595 +1,767 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>{{ config('app.name', 'ALaCarta') }}</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="asset('images/favicon.png')" type="image/png">
 
-    {{-- favicon --}}
-    <link rel="icon" href="{{ asset('images/favicon.png') }}">
+    <title>A La Carta App</title>
 
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/LineIcons.2.0.css') }}">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
+    <!-- Tiny Slider  -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tiny-slider.css') }}">
+    <!-- Tailwind css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwind.css') }}">
+  </head>
+  <body>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap" class="relative">
+      <!-- Navbar Start -->
+      <div class="navigation fixed top-0 left-0 w-full z-30 duration-300">
+          <div class="container">
+              <nav class="navbar py-2 navbar-expand-lg flex justify-between items-center relative duration-300">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="{{ asset('images/logo.svg') }}" alt="Logo">
+                  </a>
+                  <button class="navbar-toggler focus:outline-none block lg:hidden" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="toggler-icon"></span>
+                      <span class="toggler-icon"></span>
+                      <span class="toggler-icon"></span>
+                  </button>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+                  <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 py-3 w-full lg:static lg:bg-transparent lg:shadow-none" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto justify-center items-center lg:flex">
+                          <li class="nav-item">
+                            <a class="page-scroll active" href="#hero-area">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#services">Services</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#feature">feature</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#team">Team</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#testimonial">Testimonial</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#pricing">Pricing</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="page-scroll" href="#contact">Contact</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="header-btn hidden sm:block sm:absolute sm:right-0 sm:mr-16 lg:static lg:mr-0">
+                    <a class="text-blue-600 border border-blue-600 px-10 py-3 rounded-full duration-300 hover:bg-blue-600 hover:text-white" href="#feature">FAQ</a>
+                  </div>
+              </nav>
+          </div>
+      </div>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header Area wrapper End -->
 
-    <!-- Scripts -->
-    @routes
-    <script src="{{ mix('js/app.js') }}" defer></script>
-</head>
-
-<body class="text-gray-800 antialiased">
-    <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 ">
-        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-            <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                   href="#">
-                    <img src="{{ asset('images/logo.svg') }}" alt="svg">
-                </a>
-                   <button
-                        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                        type="button" onclick="toggleNavbar('example-collapse-navbar')">
-                    <i class="text-white fas fa-bars"></i>
-                </button>
+    <!-- Hero Area Start -->
+    <section id="hero-area" class="bg-blue-100 pt-48 pb-10">
+      <div class="container">
+        <div class="flex justify-between">
+          <div class="w-full text-center">
+            <h2 class="text-4xl font-bold leading-snug text-gray-700 mb-10 wow fadeInUp" data-wow-delay="1s">Your Menu
+              <br class="hidden lg:block"> The Right Way</h2>
+            <div class="text-center mb-10 wow fadeInUp" data-wow-delay="1.2s">
+              <a href="#"
+                rel="nofollow"
+                class="btn">Download Now</a>
             </div>
-            <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
-                 id="example-collapse-navbar">
-                <ul class="flex flex-col lg:flex-row list-none mr-auto">
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                           href="#"><i
-                               class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"></i>
-                            Docs</a>
-                    </li>
-                </ul>
-                <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                           href="#pablo"><i
-                               class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "></i><span
-                                  class="lg:hidden inline-block ml-2">Share</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                           href="#pablo"><i
-                               class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "></i><span
-                                  class="lg:hidden inline-block ml-2">Tweet</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                           href="#pablo"><i
-                               class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "></i><span
-                                  class="lg:hidden inline-block ml-2">Star</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <button class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
-                                type="button" style="transition: all 0.15s ease 0s;">
-                            <i class="fas fa-arrow-alt-circle-down"></i> Download
-                        </button>
-                    </li>
-                </ul>
+            <div class="text-center wow fadeInUp" data-wow-delay="1.6s">
+              <img class="img-fluid mx-auto" src="{{ asset('images/hero.svg') }}" alt="">
             </div>
+          </div>
         </div>
-    </nav>
-    <main>
-        <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
-            {{-- <div class="absolute top-0 w-full h-full bg-center bg-cover"
-                 style='background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'> --}}
+      </div>
+    </section>
+    <!-- Hero Area End -->
 
-                 <div class="absolute top-0 w-full h-full bg-center bg-cover"
-                 style='background-image: url("https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'>
-                <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+    <!-- Services Section Start -->
+    <section id="services" class="py-24">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-12 section-heading wow fadeInDown" data-wow-delay="0.3s">Our Services</h2>
+        </div>
+        <div class="flex flex-wrap">
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="0.3s">
+              <div class="icon text-5xl">
+                <i class="lni lni-cog"></i>
+              </div>
+              <div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
             </div>
-            <div class="container relative mx-auto">
-                <div class="items-center flex flex-wrap">
-                    <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                        <div class="pr-12">
-                            <h1 class="text-white font-semibold text-5xl">
-                                A La Carta
-                            </h1>
-                            <p class="mt-4 text-lg text-gray-300">
-                                The right way to display your menu.
-                            </p>
-                        </div>
+          </div>
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="0.6s">
+              <div class="icon text-5xl">
+                <i class="lni lni-bar-chart"></i>
+              </div>
+              <div>
+                <h3 class="service-title">Graphic Design</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="0.9s">
+              <div class="icon text-5xl">
+                <i class="lni lni-briefcase"></i>
+              </div>
+              <div>
+                <h3 class="service-title">Business Branding</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="1.2s">
+              <div class="icon text-5xl">
+                <i class="lni lni-pencil-alt"></i>
+              </div>
+              <div>
+                <h3 class="service-title">Content Writing</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="1.5s">
+              <div class="icon text-5xl">
+                <i class="lni lni-mobile"></i>
+              </div>
+              <div>
+                <h3 class="service-title">App Development</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="m-4 wow fadeInRight" data-wow-delay="1.8s">
+              <div class="icon text-5xl">
+                <i class="lni lni-layers"></i>
+              </div>
+              <div>
+                <h3 class="service-title">Digital Marketing</h3>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia
+                  incidunt laborum aspernatur...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+
+    <!-- Feature Section Start -->
+    <div id="feature" class="bg-blue-100 py-24">
+      <div class="container">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="mb-5 lg:mb-0">
+              <h2 class="mb-12 section-heading wow fadeInDown" data-wow-delay="0.3s">Learn More About Us</h2>
+
+              <div class="flex flex-wrap">
+                <div class="w-full sm:w-1/2 lg:w-1/2">
+                  <div class="m-3">
+                    <div class="icon text-4xl">
+                      <i class="lni lni-layers"></i>
                     </div>
+                    <div class="features-content">
+                      <h4 class="feature-title">Built with TailwindCSS</h4>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempora quidem vel sint.</p>
+                    </div>
+                  </div>
                 </div>
+                <div class="w-full sm:w-1/2 lg:w-1/2">
+                  <div class="m-3">
+                    <div class="icon text-4xl">
+                      <i class="lni lni-gift"></i>
+                    </div>
+                    <div class="features-content">
+                      <h4 class="feature-title">Free to Use</h4>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempora quidem vel sint.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/2">
+                  <div class="m-3">
+                    <div class="icon text-4xl">
+                      <i class="lni lni-laptop-phone"></i>
+                    </div>
+                    <div class="features-content">
+                      <h4 class="feature-title">Fully Responsive</h4>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempora quidem vel sint.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/2">
+                  <div class="m-3">
+                    <div class="icon text-4xl">
+                      <i class="lni lni-leaf"></i>
+                    </div>
+                    <div class="features-content">
+                      <h4 class="feature-title">Easy to Customize</h4>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempora quidem vel sint.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-                 style="height: 70px;">
-                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
-                     preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                    <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-                </svg>
+          </div>
+          <div class="w-full lg:w-1/2">
+            <div class="mx-3 lg:mr-0 lg:ml-3 wow fadeInRight" data-wow-delay="0.3s">
+              <img src="assets/img/feature/img-1.svg" alt="">
             </div>
+          </div>
         </div>
-        <section class="pb-20 bg-gray-300 -mt-24">
-            <div class="container mx-auto px-4">
+      </div>
+    </div>
+    <!-- Feature Section End -->
+
+    <!-- Team Section Start -->
+    <section id="team" class="py-24 text-center">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-12 section-heading wow fadeInDown" data-wow-delay="0.3s">Our Team</h2>
+        </div>
+        <div class="flex flex-wrap justify-center">
+          <!-- Team Item Starts -->
+          <div class="max-w-sm sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="team-item">
+              <div class="team-img relative">
+                <img class="img-fluid" src="assets/img/team/img1.jpg" alt="">
+                <div class="team-overlay">
+                  <ul class="flex justify-center">
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-indigo-500">
+                        <i class="lni lni-facebook-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-blue-400">
+                        <i class="lni lni-twitter-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-red-500">
+                        <i class="lni lni-instagram-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center px-5 py-3">
+                <h3 class="team-name">John Doe</h3>
+                <p>UX UI Designer</p>
+              </div>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+          <!-- Team Item Starts -->
+          <div class="max-w-sm sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="team-item">
+              <div class="team-img relative">
+                <img class="img-fluid" src="assets/img/team/img2.jpg" alt="">
+                <div
+                  class="team-overlay">
+                  <ul class="flex justify-center">
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-indigo-500">
+                        <i class="lni lni-facebook-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-blue-400">
+                        <i class="lni lni-twitter-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-red-500">
+                        <i class="lni lni-instagram-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center px-5 py-3">
+                <h3 class="team-name">Sarah Doe</h3>
+                <p>Front-End Developer</p>
+              </div>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+          <!-- Team Item Starts -->
+          <div class="max-w-sm sm:w-1/2 md:w-1/2 lg:w-1/3">
+            <div class="team-item">
+              <div class="team-img relative">
+                <img class="img-fluid" src="assets/img/team/img3.jpg" alt="">
+                <div class="team-overlay">
+                  <ul class="flex justify-center">
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-indigo-500">
+                        <i class="lni lni-facebook-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-blue-400">
+                        <i class="lni lni-twitter-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="mx-1">
+                      <a href="#" class="social-link hover:bg-red-500">
+                        <i class="lni lni-instagram-original" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center px-5 py-3">
+                <h3 class="team-name">Rob Hope</h3>
+                <p>Front-end Developer</p>
+              </div>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+      </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Clients Section Start -->
+    <div id="clients" class="py-16 bg-blue-100">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-12 section-heading wow fadeInDown" data-wow-delay="0.3s">As Seen On</h2>
+        </div>
+        <div class="flex flex-wrap justify-center">
+          <div class="w-1/2 md:w-1/4 lg:w-1/4">
+            <div class="m-3 wow fadeInUp" data-wow-delay="0.3s">
+              <img class="client-logo" src="assets/img/clients/img1.svg" alt="">
+            </div>
+          </div>
+          <div class="w-1/2 md:w-1/4 lg:w-1/4">
+            <div class="m-3 wow fadeInUp" data-wow-delay="0.6s">
+              <img class="client-logo" src="assets/img/clients/img2.svg" alt="">
+            </div>
+          </div>
+          <div class="w-1/2 md:w-1/4 lg:w-1/4">
+            <div class="m-3 wow fadeInUp" data-wow-delay="0.9s">
+              <img class="client-logo" src="assets/img/clients/img3.svg" alt="">
+            </div>
+          </div>
+          <div class="w-1/2 md:w-1/4 lg:w-1/4">
+            <div class="m-3 wow fadeInUp" data-wow-delay="1.2s">
+              <img class="client-logo" src="assets/img/clients/img4.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Clients Section End -->
+
+    <!-- Testimonial Section Start -->
+    <section id="testimonial" class="py-24 bg-gray-800">
+      <div class="container">
+        <div class="flex justify-center mx-3">
+          <div class="w-full lg:w-7/12">
+            <div id="testimonials" class="testimonials">
+              <!-- testimonial item start -->
+              <div class="item focus:outline-none">
+                <div class="text-center py-10 px-8 md:px-10 rounded border border-gray-900">
+                  <div class="text-center">
+                    <p class="text-gray-600 leading-loose">Holisticly empower leveraged ROI whereas effective web-readiness. Completely enable emerging meta-services with cross-platform web services. Quickly initiate inexpensive total linkage rather than extensible scenarios. Holisticly empower leveraged ROI whereas effective web-readiness. </p>
+                  </div>
+                  <div class="my-3 mx-auto w-24 h-24 shadow-md rounded-full">
+                    <img class="rounded-full p-2 w-full" src="assets/img/testimonial/img1.jpg" alt="">
+                  </div>
+                  <div class="mb-2">
+                    <h2 class="font-bold text-lg uppercase text-blue-600 mb-2">Fajar</h2>
+                    <h3 class="font-medium text-white text-sm">Euphoriya</h3>
+                  </div>
+                </div>
+              </div>
+              <!-- testimonial item end -->
+              <!-- testimonial item start -->
+              <div class="item focus:outline-none">
+                <div class="text-center py-10 px-8 md:px-10 rounded border border-gray-900">
+                  <div class="text-center">
+                    <p class="text-gray-600 leading-loose">Holisticly empower leveraged ROI whereas effective web-readiness. Completely enable emerging meta-services with cross-platform web services. Quickly initiate inexpensive total linkage rather than extensible scenarios. Holisticly empower leveraged ROI whereas effective web-readiness. </p>
+                  </div>
+                  <div class="my-3 mx-auto w-24 h-24 shadow-md rounded-full">
+                    <img class="rounded-full p-2 w-full" src="assets/img/testimonial/img2.jpg" alt="">
+                  </div>
+                  <div class="mb-2">
+                    <h2 class="font-bold text-lg uppercase text-blue-600 mb-2">Mila</h2>
+                    <h3 class="font-medium text-white text-sm">PageBulb</h3>
+                  </div>
+                </div>
+              </div>
+              <!-- testimonial item end -->
+              <!-- testimonial item start -->
+              <div class="item focus:outline-none">
+                <div class="text-center py-10 px-8 md:px-10 rounded border border-gray-900">
+                  <div class="text-center">
+                    <p class="text-gray-600 leading-loose">Holisticly empower leveraged ROI whereas effective web-readiness. Completely enable emerging meta-services with cross-platform web services. Quickly initiate inexpensive total linkage rather than extensible scenarios. Holisticly empower leveraged ROI whereas effective web-readiness. </p>
+                  </div>
+                  <div class="my-3 mx-auto w-24 h-24 shadow-md rounded-full">
+                    <img class="rounded-full p-2 w-full" src="assets/img/testimonial/img1.jpg" alt="">
+                  </div>
+                  <div class="mb-2">
+                    <h2 class="font-bold text-lg uppercase text-blue-600 mb-2">Rob</h2>
+                    <h3 class="font-medium text-white text-sm">OnePageLove</h3>
+                  </div>
+                </div>
+              </div>
+              <!-- testimonial item end -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+    <!-- Pricing section Start -->
+    <section id="pricing" class="py-24">
+      <div class="container">
+        <div class="flex flex-wrap justify-center md:justify-start">
+          <!-- single pricing table starts -->
+          <div class="w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3">
+            <div class="pricing-box wow fadeInLeft" data-wow-delay="1.2s">
+              <div class="mb-3">
+                <h3 class="package-name">Basic</h3>
+              </div>
+              <div class="mb-5">
+                <p class="text-gray-700">
+                  <span class="font-bold text-2xl">$12.90</span>
+                  <span class="font-medium text-sm">/ Month</span>
+                </p>
+              </div>
+              <ul class="mb-16">
+                <li class="text-gray-500 leading-9">Up to 5 projects </li>
+                <li class="text-gray-500 leading-9">Up to 10 collabrators</li>
+                <li class="text-gray-500 leading-9">2gb of storage</li>
+              </ul>
+              <a href="#" class="btn">Get It</a>
+            </div>
+          </div>
+          <!-- single pricing table ends -->
+          <!-- single pricing table starts -->
+          <div class="w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3">
+            <div class="pricing-box bg-blue-100 wow fadeInLeft" data-wow-delay="1.2s">
+              <div class="mb-3">
+                <h3 class="package-name">PROFESIONAL</h3>
+              </div>
+              <div class="mb-5">
+                <p class="text-gray-700">
+                  <span class="font-bold text-2xl">$49.90</span>
+                  <span class="font-medium text-sm">/ Month</span>
+                </p>
+              </div>
+              <ul class="mb-16">
+                <li class="text-gray-500 leading-9">Up to 10 projects </li>
+                <li class="text-gray-500 leading-9">Up to 20 collabrators</li>
+                <li class="text-gray-500 leading-9">10gb of storage</li>
+                <li class="text-gray-500 leading-9">Real-time collabration</li>
+              </ul>
+              <a href="#" class="btn">Get It</a>
+            </div>
+          </div>
+          <!-- single pricing table ends -->
+          <!-- single pricing table starts -->
+          <div class="w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3">
+            <div class="pricing-box">
+              <div class="mb-3">
+                <h3 class="package-name">EXPERT</h3>
+              </div>
+              <div class="mb-5">
+                <p class="text-gray-700">
+                  <span class="font-bold text-2xl">$89.90</span>
+                  <span class="font-medium text-sm">/ Month</span>
+                </p>
+              </div>
+              <ul class="mb-16">
+                <li class="text-gray-500 leading-9">unlimited projects </li>
+                <li class="text-gray-500 leading-9">Unlimited collabrators</li>
+                <li class="text-gray-500 leading-9">Unlimited of storage</li>
+                <li class="text-gray-500 leading-9">Real-time collabration</li>
+                <li class="text-gray-500 leading-9">24x7 Support</li>
+              </ul>
+              <a href="#" class="btn">Get It</a>
+            </div>
+          </div>
+          <!-- single pricing table ends -->
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Table Section End -->
+
+    <!-- carousel-area Section Start -->
+    <section class="carousel-area bg-gray-800 py-32">
+      <div class="container">
+        <div class="flex">
+          <div class="w-full relative">
+            <div class="portfolio-carousel">
+              <div>
+                <img class="w-full" src="assets/img/slide/img1.jpg" alt="">
+              </div>
+              <div>
+                <img class="w-full" src="assets/img/slide/img2.jpg" alt="">
+              </div>
+              <div>
+                <img class="w-full" src="assets/img/slide/img3.jpg" alt="">
+              </div>
+              <div>
+                <img class="w-full" src="assets/img/slide/img4.jpg" alt="">
+              </div>
+              <div>
+                <img class="w-full" src="assets/img/slide/img5.jpg" alt="">
+              </div>
+              <div>
+                <img  class="w-full" src="assets/img/slide/img6.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- carousel-area Section End -->
+
+    <!-- Subscribe Section Start -->
+    <section id="Subscribes" class="text-center py-20 bg-blue-100">
+      <div class="container">
+        <div class="flex justify-center mx-3">
+          <div class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
+            <h4 class="mb-3 section-heading wow fadeInUp" data-wow-delay="0.3s">Start For Free</h4>
+            <p class="mb-4 text-gray-600 leading-loose text-sm wow fadeInUp" data-wow-delay="0.6s">Existing customized ideas through client-based deliverables. <br> Compellingly unleash fully tested outsourcing</p>
+            <form for="">
+              <div class="wow fadeInDown" data-wow-delay="0.3s">
+                <input type="Email" class="w-full mb-5 bg-white border border-blue-300 rounded-full px-5 py-3 duration-300 focus:border-blue-600 outline-none" name="email" placeholder="Email Address">
+                <button class="border-0 bg-blue-600 text-white rounded-full w-12 h-12 duration-300 hover:opacity-75" type="submit"><i class="lni lni-arrow-right"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Subscribe Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="py-24">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-12 text-4xl text-gray-700 font-bold tracking-wide wow fadeInDown" data-wow-delay="0.3s">Contact</h2>
+        </div>
+
+        <div class="flex flex-wrap contact-form-area wow fadeInUp" data-wow-delay="0.4s">
+          <div class="w-full md:w-1/2">
+            <div class="contact">
+              <h2 class="uppercase font-bold text-xl text-gray-700 mb-5 ml-3">Contact Form</h2>
+              <form id="contactForm" action="assets/contact.php">
                 <div class="flex flex-wrap">
-                    <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-                        <div
-                             class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                            <div class="px-4 py-5 flex-auto">
-                                <div
-                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <h6 class="text-xl font-semibold">Awarded Agency</h6>
-                                <p class="mt-2 mb-4 text-gray-600">
-                                    Divide details about your product or agency work into parts.
-                                    A paragraph describing a feature will be enough.
-                                </p>
-                            </div>
-                        </div>
+                  <div class="w-full sm:w-1/2 md:w-full lg:w-1/2">
+                    <div class="mx-3">
+                      <input type="text" class="form-input rounded-full" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
                     </div>
-                    <div class="w-full md:w-4/12 px-4 text-center">
-                        <div
-                             class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                            <div class="px-4 py-5 flex-auto">
-                                <div
-                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-                                    <i class="fas fa-retweet"></i>
-                                </div>
-                                <h6 class="text-xl font-semibold">Free Revisions</h6>
-                                <p class="mt-2 mb-4 text-gray-600">
-                                    Keep you user engaged by providing meaningful information.
-                                    Remember that by this time, the user is curious.
-                                </p>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="w-full sm:w-1/2 md:w-full lg:w-1/2">
+                    <div class="mx-3">
+                      <input type="text" placeholder="Email" id="email" class="form-input rounded-full" name="email" required data-error="Please enter your email">
                     </div>
-                    <div class="pt-6 w-full md:w-4/12 px-4 text-center">
-                        <div
-                             class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                            <div class="px-4 py-5 flex-auto">
-                                <div
-                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
-                                    <i class="fas fa-fingerprint"></i>
-                                </div>
-                                <h6 class="text-xl font-semibold">Verified Company</h6>
-                                <p class="mt-2 mb-4 text-gray-600">
-                                    Write a few lines about each one. A paragraph describing a
-                                    feature will be enough. Keep you user engaged!
-                                </p>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="w-full">
+                    <div class="mx-3">
+                      <input type="text" placeholder="Subject" id="subject" name="subject" class="form-input rounded-full" required data-error="Please enter your subject">
                     </div>
+                  </div>
+                  <div class="w-full">
+                    <div class="mx-3">
+                      <textarea class="form-input rounded-lg" id="message" name="message" placeholder="Your Message" rows="5" data-error="Write your message" required></textarea>
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <div class="submit-button mx-3">
+                      <button class="btn" id="form-submit" type="submit">Send Message</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex flex-wrap items-center mt-32">
-                    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-                        <div
-                             class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
-                            <i class="fas fa-user-friends text-xl"></i>
-                        </div>
-                        <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            Working with us is a pleasure
-                        </h3>
-                        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                            Don't let your uses guess by attaching tooltips and popoves to
-                            any element. Just make sure you enable them first via
-                            JavaScript.
-                        </p>
-                        <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                            The kit comes with three pre-built pages to help you get started
-                            faster. You can change the text and images and you're good to
-                            go. Just make sure you enable them first via JavaScript.
-                        </p>
-                        <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
-                           class="font-bold text-gray-800 mt-8">Check Tailwind Starter Kit!</a>
-                    </div>
-                    <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                        <div
-                             class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
-                            <img alt="..."
-                                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1051&amp;q=80"
-                                 class="w-full align-middle rounded-t-lg" />
-                            <blockquote class="relative p-8 mb-4">
-                                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
-                                     class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
-                                    <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current"></polygon>
-                                </svg>
-                                <h4 class="text-xl font-bold text-white">
-                                    Top Notch Services
-                                </h4>
-                                <p class="text-md font-light mt-2 text-white">
-                                    The Arctic Ocean freezes every winter and much of the
-                                    sea-ice then thaws every summer, and that process will
-                                    continue whatever happens.
-                                </p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
+              </form>
             </div>
-        </section>
-        <section class="relative py-20">
-            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-                 style="height: 80px;">
-                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
-                     preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                    <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
-                </svg>
-            </div>
-            <div class="container mx-auto px-4">
-                <div class="items-center flex flex-wrap">
-                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg"
-                             src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80" />
-                    </div>
-                    <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
-                        <div class="md:pr-12">
-                            <div
-                                 class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
-                                <i class="fas fa-rocket text-xl"></i>
-                            </div>
-                            <h3 class="text-3xl font-semibold">A growing company</h3>
-                            <p class="mt-4 text-lg leading-relaxed text-gray-600">
-                                The extension comes with three pre-built pages to help you get
-                                started faster. You can change the text and images and you're
-                                good to go.
-                            </p>
-                            <ul class="list-none mt-6">
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span
-                                                  class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
-                                                   class="fas fa-fingerprint"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">
-                                                Carefully crafted components
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span
-                                                  class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
-                                                   class="fab fa-html5"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">Amazing page examples</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span
-                                                  class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
-                                                   class="far fa-paper-plane"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">Dynamic components</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <div class="ml-3 md:ml-12 wow fadeIn">
+              <h2 class="uppercase font-bold text-xl text-gray-700 mb-5">Get In Touch</h2>
+              <div>
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="contact-icon">
+                    <i class="lni lni-map-marker"></i>
+                  </div>
+                  <p class="pl-3">Skopje, Macedonia</p>
                 </div>
-            </div>
-        </section>
-        <section class="pt-20 pb-48">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center text-center mb-24">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold">Here are our heroes</h2>
-                        <p class="text-lg leading-relaxed m-4 text-gray-600">
-                            According to the National Oceanic and Atmospheric
-                            Administration, Ted, Scambos, NSIDClead scentist, puts the
-                            potentially record maximum.
-                        </p>
-                    </div>
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="contact-icon">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                  <p class="pl-3">
+                    <a href="#" class="block">email@gmail.com</a>
+                    <a href="#" class="block">tomsaulnier@gmail.com</a>
+                  </p>
                 </div>
-                <div class="flex flex-wrap">
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-1-800x800.jpg"
-                                 class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Ryan Tompson</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Web Developer
-                                </p>
-                                <div class="mt-6">
-                                    <button class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                            class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-facebook-f"></i></button><button
-                                            class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-dribbble"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-2-800x800.jpg"
-                                 class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Romina Hadid</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Marketing Specialist
-                                </p>
-                                <div class="mt-6">
-                                    <button class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                            class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-3-800x800.jpg"
-                                 class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Alexa Smith</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    UI/UX Designer
-                                </p>
-                                <div class="mt-6">
-                                    <button class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                            class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                            class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-4-470x470.png"
-                                 class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Jenna Kardi</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Founder and CEO
-                                </p>
-                                <div class="mt-6">
-                                    <button class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-dribbble"></i></button><button
-                                            class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                            class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                            class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                            type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap mb-6 items-center">
+                  <div class="contact-icon">
+                    <i class="lni lni-phone-set"></i>
+                  </div>
+                  <p class="pl-3">
+                    <a href="#" class="block">+42 374 5967</a>
+                    <a href="#" class="block">+99 123 5967</a>
+                  </p>
                 </div>
+              </div>
             </div>
-        </section>
-        <section class="pb-20 relative block bg-gray-900">
-            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-                 style="height: 80px;">
-                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
-                     preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                    <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
-                </svg>
-            </div>
-            <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
-                <div class="flex flex-wrap text-center justify-center">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold text-white">Build something</h2>
-                        <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                            Put the potentially record low maximum sea ice extent tihs year
-                            down to low ice. According to the National Oceanic and
-                            Atmospheric Administration, Ted, Scambos.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap mt-12 justify-center">
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div
-                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-medal text-xl"></i>
-                        </div>
-                        <h6 class="text-xl mt-5 font-semibold text-white">
-                            Excelent Services
-                        </h6>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                    </div>
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div
-                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-poll text-xl"></i>
-                        </div>
-                        <h5 class="text-xl mt-5 font-semibold text-white">
-                            Grow your market
-                        </h5>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                    </div>
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div
-                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-lightbulb text-xl"></i>
-                        </div>
-                        <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="relative block py-24 lg:pt-0 bg-gray-900">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <div
-                             class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
-                            <div class="flex-auto p-5 lg:p-10">
-                                <h4 class="text-2xl font-semibold">Want to work with us?</h4>
-                                <p class="leading-relaxed mt-1 mb-4 text-gray-600">
-                                    Complete this form and we will get back to you in 24 hours.
-                                </p>
-                                <div class="relative w-full mb-3 mt-8">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                           for="full-name">Full Name</label><input type="text"
-                                           class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                           placeholder="Full Name" style="transition: all 0.15s ease 0s;" />
-                                </div>
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                           for="email">Email</label><input type="email"
-                                           class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                           placeholder="Email" style="transition: all 0.15s ease 0s;" />
-                                </div>
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                           for="message">Message</label><textarea rows="4" cols="80"
-                                              class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                              placeholder="Type a message..."></textarea>
-                                </div>
-                                <div class="text-center mt-6">
-                                    <button class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                            type="button" style="transition: all 0.15s ease 0s;">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="relative bg-gray-300 pt-8 pb-6">
-        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-             style="height: 80px;">
-            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                 version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
+          </div>
         </div>
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
-                    <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-                    <h5 class="text-lg mt-0 mb-2 text-gray-700">
-                        Find us on any of these platforms, we respond 1-2 business days.
-                    </h5>
-                    <div class="mt-6">
-                        <button class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                                type="button">
-                            <i class="flex fab fa-twitter"></i></button><button
-                                class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                                type="button">
-                            <i class="flex fab fa-facebook-square"></i></button><button
-                                class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                                type="button">
-                            <i class="flex fab fa-dribbble"></i></button><button
-                                class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                                type="button">
-                            <i class="flex fab fa-github"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="w-full lg:w-6/12 px-4">
-                    <div class="flex flex-wrap items-top mb-6">
-                        <div class="w-full lg:w-4/12 px-4 ml-auto">
-                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://www.creative-tim.com/presentation">About Us</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://blog.creative-tim.com">Blog</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://www.github.com/creativetimofficial">Github</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://www.creative-tim.com/bootstrap-themes/free">Free Products</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4">
-                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other
-                                Resources</span>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT
-                                        License</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://creative-tim.com/terms">Terms &amp; Conditions</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://creative-tim.com/privacy">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                       href="https://creative-tim.com/contact-us">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-6 border-gray-400" />
-            <div class="flex flex-wrap items-center md:justify-between justify-center">
-                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-                    <div class="text-sm text-gray-600 font-semibold py-1">
-                        Copyright © 2019 Tailwind Starter Kit by
-                        <a href="https://www.creative-tim.com" class="text-gray-600 hover:text-gray-900">Creative
-                            Tim</a>.
-                    </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Map Section Start -->
+    <section id="google-map-area">
+        <div class="mx-6 mb-6">
+            <div class="flex">
+                <div class="w-full">
+                    <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.7887109309127!2d-77.44196278417968!3d38.95165507956235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDU3JzA2LjAiTiA3N8KwMjYnMjMuMiJX!5e0!3m2!1sen!2sbd!4v1545420879707"></object>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Map Section End -->
+
+	  <!-- Footer Section Start -->
+    <footer id="footer" class="bg-gray-800 py-16">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="mx-3 mb-8">
+              <div class="footer-logo mb-3">
+                <img src="assets/img/logo.svg" alt="">
+              </div>
+              <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam excepturi quasi, ipsam
+                voluptatem.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="mx-3 mb-8">
+              <h3 class="font-bold text-xl text-white mb-5">Company</h3>
+              <ul>
+                <li><a href="#" class="footer-links">Press Releases</a></li>
+                <li><a href="#" class="footer-links">Mission</a></li>
+                <li><a href="#" class="footer-links">Strategy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="mx-3 mb-8">
+              <h3 class="font-bold text-xl text-white mb-5">About</h3>
+              <ul>
+                <li><a href="#" class="footer-links">Career</a></li>
+                <li><a href="#" class="footer-links">Team</a></li>
+                <li><a href="#" class="footer-links">Clients</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow fadeInUp" data-wow-delay="0.8s">
+            <div class="mx-3 mb-8">
+              <h3 class="font-bold text-xl text-white mb-5">Find us on</h3>
+
+              <ul class="social-icons flex justify-start">
+                <li class="mx-2">
+                  <a href="#"
+                    class="footer-icon hover:bg-indigo-500">
+                    <i class="lni lni-facebook-original" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="#"
+                    class="footer-icon hover:bg-blue-400">
+                    <i class="lni lni-twitter-original" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="#"
+                    class="footer-icon hover:bg-red-500">
+                    <i class="lni lni-instagram-original" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="mx-2">
+                  <a href="#"
+                    class="footer-icon hover:bg-indigo-600">
+                    <i class="lni lni-linkedin-original" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
-<script>
-    function toggleNavbar(collapseID) {
-        document.getElementById(collapseID).classList.toggle("hidden");
-        document.getElementById(collapseID).classList.toggle("block");
-    }
+    <!-- Footer Section End -->
 
-</script>
+    <section class="bg-gray-800 py-6 border-t-2 border-gray-700 border-dotted">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full text-center">
+            <p class="text-white">Designed and Developed by <a class="text-white duration-300 hover:text-blue-600" href="https://tailwindtemplates.co" rel="nofollow">TailwindTemplates</a> and <a class="text-white duration-300 hover:text-blue-600" href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full bg-blue-600 text-white text-lg z-20 duration-300 hover:bg-blue-400">
+      <i class="lni lni-arrow-up"></i>
+    </a>
+
+    <!-- Preloader -->
+<!--     <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div> -->
+    <!-- End Preloader -->
+
+    <!-- All js Here -->
+    <script src="{{ asset('js/wow.js') }}"></script>
+    <script src="{{ asset('js/tiny-slider.js') }}"></script>
+    <script src="{{ asset('js/mainB.js') }}"></script>
+  </body>
 </html>
+
