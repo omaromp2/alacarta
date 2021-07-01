@@ -14,7 +14,7 @@ class restaurant extends Model
         'owner_id',
         'open',
         'close',
-        'multi_location'
+        'multi_location',
     ];
 
     /**

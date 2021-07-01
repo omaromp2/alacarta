@@ -178,7 +178,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
 
         // QR
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
     ],
 

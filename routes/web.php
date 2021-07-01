@@ -46,13 +46,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     ->names([
         'index' => 'restaurants',
         'create' => 'restaurant/create',
-        'view' => 'restaurant/{id}'
+        'view' => 'restaurant/{id}',
     ]);
 
     // Menu
     Route::resource('menu', MenuController::class)->names([
         'index' => 'menu',
-        'create' => 'menu/create'
+        'create' => 'menu/create',
     ]);
 
     // QR gen

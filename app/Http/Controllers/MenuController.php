@@ -73,7 +73,7 @@ class MenuController extends Controller
         // session()->flash('flash.banner', 'Yay you created a new Restaurant!');
         // session()->flash('flash.bannerStyle', 'success');
 
-        return redirect('/menu?rest=' . $request->input('rest'))
+        return redirect('/menu?rest='.$request->input('rest'))
         ->with('message', 'Yay you added a new restaurant item');
     }
 
@@ -126,7 +126,7 @@ class MenuController extends Controller
 
         $menu->save();
 
-        return redirect('/menu?rest=' . $menu->rest_id);
+        return redirect('/menu?rest='.$menu->rest_id);
     }
 
     /**
@@ -142,15 +142,14 @@ class MenuController extends Controller
 
     public function typeGetter($rest_id)
     {
-        # code...
+        // code...
         $types = menu::where('rest_id', $rest_id)->pluck('type', 'type');
         // dd($types);
 
         if ($types->count() == 0) {
-            # No hay forzamos ...
+            // No hay forzamos ...
             $types['food'] = 'food';
         }
-
 
         return $types;
     }

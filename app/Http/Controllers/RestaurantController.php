@@ -96,7 +96,7 @@ class RestaurantController extends Controller
         return Inertia::render(
             'Restaurants/edit',
             [
-            'rest' => $restaurant
+            'rest' => $restaurant,
         ]
         );
     }
@@ -118,7 +118,6 @@ class RestaurantController extends Controller
             'open' => 'required',
             'close' => 'required',
         ]);
-
 
         $rest = $restaurant;
         $rest->owner_id = Auth::user()->id;
@@ -148,7 +147,7 @@ class RestaurantController extends Controller
 
     public function showClient($restaurant, Request $request)
     {
-        # para mostrar restaurante a cliente...
+        // para mostrar restaurante a cliente...
 
         $rest = restaurant::findOrFail($restaurant);
 
@@ -164,19 +163,19 @@ class RestaurantController extends Controller
         $filter = $request->input('filter');
 
         if ($filter) {
-            # Si hay filtro ...
+            // Si hay filtro ...
 
             if ($filter == 'all') {
-                # code...
+                // code...
                 $items = $rest->menuItems->where('is_published', 1);
             } else {
-                # code...
+                // code...
                 $items = $rest->menuItems
                     ->where('is_published', 1)
                     ->where('type', $request->input('filter'));
             }
         } else {
-            # no hay filtro...
+            // no hay filtro...
             $items = $rest->menuItems->where('is_published', 1);
         }
 
@@ -190,14 +189,14 @@ class RestaurantController extends Controller
 
     public function generateQR($rest)
     {
-        # generamos el qr del rest...
+        // generamos el qr del rest...
         // dd($rest);
-        return QrCode::size(300)->generate('https://8affc5dd75b2.ngrok.io/rest/' . $rest);
+        return QrCode::size(300)->generate('https://8affc5dd75b2.ngrok.io/rest/'.$rest);
     }
 
     public function getRest($user_id)
     {
-        # code...
+        // code...
         // dd($user_id);
         $rests = restaurant::where('owner_id', $user_id)->paginate(2);
 
@@ -206,7 +205,7 @@ class RestaurantController extends Controller
 
     public function imgUpload(Request $request, $rest_id)
     {
-        # Upload de imagenes ...
+        // Upload de imagenes ...
         $img = $request->input('img');
 
         $request->validate([
@@ -222,7 +221,7 @@ class RestaurantController extends Controller
 
         return response()->json([
             'code' => 200,
-            'msg' => 'Image uploaded successfully'
+            'msg' => 'Image uploaded successfully',
         ], 200);
     }
 }
