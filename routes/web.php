@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\BillingController;
+use App\Http\Controllers\BillingPortalController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,11 +37,15 @@ Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
 //     return QrCode::size(300)->generate('A basic example of QR code!');
 // });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::middleware('billing')->get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
     // Restaurants
     Route::resource('restaurant', RestaurantController::class)
@@ -70,4 +76,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Upload imagenes de rest
     Route::post('imgrest/{id}', [RestaurantController::class, 'imgUpload']);
+
+    Route::get('subscription', BillingController::class)->name('subscription'); 
+
+    Route::get('billing-portal',BillingPortalController::class)->name('billing');
+    // Route::get('newCus/{id}',[BillingController::class, 'createAsCus']); 
+
 });
