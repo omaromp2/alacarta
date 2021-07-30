@@ -9,7 +9,9 @@
     <!-- My Logo
     <img src="../../../public/images/img1.svg" alt="img1"> -->
 
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	<!-- alacara -->
+
+<!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 329.462 80.667" enable-background="new 0 0 329.462 80.667"
 	 xml:space="preserve">
 <g>
@@ -223,7 +225,68 @@
 		 M288.852,46.551h11.97l-5.46-13.17c-0.08-0.199-0.163-0.402-0.248-0.607c-0.085-0.204-0.172-0.407-0.262-0.607
 		c-0.021,0-0.03,0.011-0.03,0.03L288.852,46.551z"/>
 </g>
-</svg>
+</svg> -->
+
+
+<!-- QMenu  -->
+<svg
+   version="1.1"
+   id="svg9"
+   xml:space="preserve"
+   width="124.10333"
+   height="105.90293"
+   viewBox="0 0 124.10333 105.90293"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs13"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath23"><path
+         d="M 0,106.955 H 115.581 V 0 H 0 Z"
+         id="path21" /></clipPath></defs><g
+     id="g15"
+     transform="matrix(1.3333333,0,0,-1.3333333,-15.002266,124.2544)"><g
+       id="g17"><g
+         id="g19"
+         clip-path="url(#clipPath23)"><g
+           id="g25"
+           transform="translate(18.9627,17.9786)"><path
+             d="M 0,0 C 0.344,0 0.624,0.031 0.905,0.094 L -0.187,1.842 2.092,3.341 2.966,2.123 c 0.219,0.593 0.312,1.343 0.312,2.186 0,2.559 -1.249,4.183 -3.247,4.183 -2.06,0 -3.372,-1.655 -3.372,-4.277 C -3.341,1.624 -2.061,0 0,0 m 7.523,-4.215 c -1.56,0 -2.997,0.313 -4.089,1.03 -1.03,-0.561 -2.216,-0.874 -3.496,-0.874 -4.621,0 -7.649,3.216 -7.649,8.18 0,5.151 3.06,8.492 7.805,8.492 4.589,0 7.554,-3.184 7.554,-8.117 0,-1.904 -0.499,-3.591 -1.341,-4.995 0.249,-0.063 0.53,-0.125 0.811,-0.156 l 1.155,-0.188 z"
+             style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path27" /></g><path
+           d="M 37.347,20.414 H 29.48 v 4.059 h 7.867 z"
+           style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path29" /><g
+           id="g31"
+           transform="translate(57.2625,30.3732)"><path
+             d="m 0,0 v -16.234 h -4.246 v 8.304 l -3.622,-5.931 h -1.186 l -3.622,5.963 v -8.336 h -4.245 V 0 h 4.214 L -8.461,-6.962 -4.215,0 Z"
+             style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path33" /></g><g
+           id="g35"
+           transform="translate(64.4998,26.3458)"><path
+             d="M 0,0 V -2.154 H 5.433 V -5.963 H 0 V -8.18 h 7.243 v -4.027 H -4.246 V 4.027 H 7.243 V 0 Z"
+             style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path37" /></g><g
+           id="g39"
+           transform="translate(88.0359,30.3732)"><path
+             d="m 0,0 v -16.234 h -4.215 l -4.839,8.023 v -8.023 H -13.3 V 0 h 4.246 l 4.808,-7.992 V 0 Z"
+             style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path41" /></g><g
+           id="g43"
+           transform="translate(95.2752,30.3732)"><path
+             d="m 0,0 v -8.96 c 0,-1.499 0,-3.31 2.436,-3.31 2.372,0 2.372,1.811 2.372,3.31 V 0 h 4.246 v -8.523 c 0,-2.841 0,-7.93 -6.65,-7.93 -6.65,0 -6.65,5.089 -6.65,7.93 V 0 Z"
+             style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path45" /></g><g
+           id="g47"
+           transform="translate(31.5034,93.1908)"><path
+             d="m 0,0 v -52.695 h 36.128 l -4.973,6.765 H 6.766 V -6.766 H 45.93 V -45.93 h -6.073 l 4.974,-6.765 h 7.864 V 0 Z"
+             style="fill:#80cc28;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path49" /></g><path
+           d="M 64.78,59.95 H 50.963 V 73.715 H 64.78 Z M 45.035,54.065 H 70.688 V 79.622 H 45.035 Z"
+           style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path51" /><path
+           d="m 60.575,64.119 h -5.448 v 5.448 h 5.448 z"
+           style="fill:#2c317c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path53" /></g></g></g></svg>
 
 
 </template>

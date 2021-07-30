@@ -4,14 +4,20 @@
             <slot></slot>
         </button>
 
-        <inertia-link :href="href" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" v-else>
+        <component :is="tag" :href="href" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 
+        focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" v-else>
             <slot></slot>
-        </inertia-link>
+        </component>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['href', 'as']
+        props: ['href', 'as', 'external'], 
+        computed:{
+            tag(){
+                return this.external ? 'a' : 'inertia-link';
+            }
+        }
     }
 </script>

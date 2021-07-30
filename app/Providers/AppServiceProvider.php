@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // agregamos cashier 
-        Cashier::useCustomerModel(User::class);
+        // Cashier::useCustomerModel(User::class);
         // Cashier::calculateTaxes();
         // Temp para probar con https 
-        app(UrlGenerator::class)->forceScheme('https');
+        // app(UrlGenerator::class)->forceScheme('https');
     }
 }
