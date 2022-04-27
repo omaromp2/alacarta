@@ -7,6 +7,8 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './node_modules/tw-elements/dist/css/index.min.css',
+        './node_modules/tw-elements/dist/js/index.min.js',
     ],
 
     theme: {
@@ -29,5 +31,9 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+        require('tw-elements/dist/plugin'),
+    ],
 };

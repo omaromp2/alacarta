@@ -27,9 +27,9 @@
 
 
                         <svg class="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
+                            stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
 
                         <span class="mx-1">Add</span>
@@ -48,16 +48,16 @@
         <!-- Restaurantes  -->
 
         <div v-for="rest in rests" :key="rest.id"
-             class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-4 ">
+            class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-4 ">
             <!-- <img class="object-cover object-center w-full h-56"
                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                  alt="avatar"> -->
 
-            <img v-if="rest.profileImg" class="object-cover object-center w-full h-56"
-                 :src="rest.profileImg" alt="avatar">
-            <img  v-else class="object-cover object-center w-full h-56"
-                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                 alt="avatar">
+            <img v-if="rest.profileImg" class="object-cover object-center w-full h-56" :src="rest.profileImg"
+                alt="avatar">
+            <img v-else class="object-cover object-center w-full h-56"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                alt="avatar">
 
             <div class="px-6 py-4">
                 <h1 class="text-xl font-semibold text-gray-800 dark:text-white"> {{ rest.name }} </h1>
@@ -65,9 +65,9 @@
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
 
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                            d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
                     </svg>
 
                     <h1 class="px-2 text-sm"> {{ rest.open }} </h1>
@@ -75,9 +75,9 @@
 
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
 
                     <h1 class="px-2 text-sm"> {{ rest.close }} </h1>
@@ -85,11 +85,11 @@
 
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
 
                     <h1 class="px-2 text-sm">Locations</h1>
@@ -98,9 +98,9 @@
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
 
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
 
                     <h1 class="px-2 text-sm">
@@ -112,21 +112,27 @@
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
 
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                            d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                     </svg>
 
                     <h1 class="px-2 text-sm">
-                        <a :href="'qr/' + rest.id "> QR </a>
+                        <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                        <a :href="'qr/' + rest.id " target="_blank" > QR </a>
+
+                        <!-- <a href="#" data-bs-toggle="modal" :data-bs-target="'#Modal' + rest.id "> QR </a> -->
+
                     </h1>
 
                 </div>
 
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
 
                     <h1 class="px-2 text-sm">
@@ -138,20 +144,22 @@
                 <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
 
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
 
                     <h1 class="px-2 text-sm">
-                        <a :href="'rest/' + rest.id "> Preview </a>
+                        <a :href="'rest/' + rest.id " target="_blank"> Preview </a>
                     </h1>
 
                 </div>
 
             </div>
+
+
         </div>
 
 
@@ -162,12 +170,12 @@
                 <div class="flex flex-wrap -mb-1">
                     <template v-for="link in links.links" :key="link">
                         <div v-if="link.url == null"
-                             class="mr-1 mb-1 px-4 py-3 text-sm leading-4 text-gray-400 border rounded"
-                             v-html="link.label" />
+                            class="mr-1 mb-1 px-4 py-3 text-sm leading-4 text-gray-400 border rounded"
+                            v-html="link.label" />
                         <div v-else
-                             class="mr-1 mb-1 px-4 py-3 text-sm leading-4 border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500"
-                             :class="{ 'bg-white': link.active }" v-html="link.label"
-                             @click="restGetter(user_id, link.url)" />
+                            class="mr-1 mb-1 px-4 py-3 text-sm leading-4 border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500"
+                            :class="{ 'bg-white': link.active }" v-html="link.label"
+                            @click="restGetter(user_id, link.url)" />
                     </template>
                 </div>
             </div>
@@ -229,6 +237,23 @@
                         console.log(err);
                     });
             },
+
+            getQR(id) {
+                console.log(id);
+                let uri = "/qr/" + id;
+
+                axios.get(uri)
+                    .then(resp => {
+                        console.log(resp);
+                        // this.links = resp.data;
+                        // this.rests = this.links.data;
+
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            },
+
         },
 
     }

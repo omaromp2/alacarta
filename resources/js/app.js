@@ -8,6 +8,8 @@ import { InertiaProgress } from '@inertiajs/progress';
 // test vue tailwind
 // import { VueTailwind } from "vue-tailwind";
 
+import 'tw-elements';
+
 const el = document.getElementById('app');
 
 createApp({
