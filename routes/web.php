@@ -43,9 +43,13 @@ Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    Route::middleware('billing')->get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    // Route::middleware('billing')->get('/dashboard', function () {
+    //     return Inertia::render('Dashboard');
+    // })->name('dashboard');
+
+    Route::get('/dashboard', function () {
+            return Inertia::render('Dashboard');
+        })->name('dashboard');
 
     // Restaurants
     Route::resource('restaurant', RestaurantController::class)
@@ -77,9 +81,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     // Upload imagenes de rest
     Route::post('imgrest/{id}', [RestaurantController::class, 'imgUpload']);
 
-    Route::get('subscription', BillingController::class)->name('subscription'); 
+    Route::get('subscription', BillingController::class)->name('subscription');
 
     Route::get('billing-portal',BillingPortalController::class)->name('billing');
-    // Route::get('newCus/{id}',[BillingController::class, 'createAsCus']); 
+    // Route::get('newCus/{id}',[BillingController::class, 'createAsCus']);
 
 });
