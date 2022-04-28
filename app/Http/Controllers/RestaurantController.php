@@ -193,6 +193,7 @@ class RestaurantController extends Controller
         // dd($rest);
         $appUrl = env('APP_URL');
         return QrCode::size(300)->generate( $appUrl . "rest/".$rest);
+
     }
 
     public function getRest($user_id)

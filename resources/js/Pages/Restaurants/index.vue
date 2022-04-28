@@ -123,6 +123,10 @@
 
                         <!-- <a href="#" data-bs-toggle="modal" :data-bs-target="'#Modal' + rest.id "> QR </a> -->
 
+                        <button class="bg-green-600"  @click="getQR(rest.id, rest.name)" > view </button>
+
+                        <!-- <img :src="" alt="img" > -->
+
                     </h1>
 
                 </div>
@@ -159,7 +163,6 @@
 
             </div>
 
-
         </div>
 
 
@@ -182,6 +185,29 @@
         </div>
 
 
+        <!-- Modal -->
+        <jet-dialog-modal :show="modal" @close="closeModal">
+            <template #title>
+                {{ selectedRest }}
+            </template>
+            <template #content>
+
+                <!-- <iframe type="text/plain" frameborder="0"
+                  :data-bind="img" >
+                </iframe> -->
+
+                <iframe :src="img" frameborder="0" height="315" width="325" class="mx-auto" ></iframe>
+
+            </template>
+            <template #footer>
+                <jet-secondary-button @click="closeModal">
+                    Cancel
+                </jet-secondary-button>
+            </template>
+        </jet-dialog-modal>
+
+
+
 
         <!-- <paging :links="links" ></paging> -->
 
@@ -190,10 +216,9 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
-
     import paging from '@/components/paging'
-
     import SuccessFlash from '@/components/success-flash'
+    import JetDialogModal from '@/Jetstream/DialogModal'
 
     export default {
         props: ['user_id'],
@@ -201,11 +226,15 @@
             AppLayout,
             paging,
             SuccessFlash,
+            JetDialogModal
         },
         data() {
             return {
+                modal: false,
                 rests: [],
                 id: this.user_id,
+                img: '',
+                selectedRest: '',
                 links: []
             }
         },
@@ -238,21 +267,46 @@
                     });
             },
 
-            getQR(id) {
-                console.log(id);
+            getQR(id, name) {
+
+                // console.log(id);
                 let uri = "/qr/" + id;
 
-                axios.get(uri)
-                    .then(resp => {
-                        console.log(resp);
-                        // this.links = resp.data;
-                        // this.rests = this.links.data;
+                this.selectedRest = name;
 
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
+                this.img = uri;
+
+                // axios.get(uri)
+                //     .then(resp => {
+                //         console.log(resp);
+                //         // this.links = resp.data;
+                //         // this.rests = this.links.data;
+
+                //         let rep = resp.data.qr;
+
+                //         let helper = rep.replace( /\\/g , "");
+
+                //         console.log(helper);
+
+
+                //         this.img = helper;
+
+                //     })
+                //     .catch(err => {
+                //         console.log(err);
+                //     });
+
+
+                // Prendemos modal
+                this.modal = true;
+
             },
+
+            closeModal() {
+                this.selectedRest = '';
+                this.img = '';
+                this.modal = false;
+            }
 
         },
 

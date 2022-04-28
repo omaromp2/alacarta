@@ -19443,6 +19443,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _components_paging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/paging */ "./resources/js/components/paging.vue");
 /* harmony import */ var _components_success_flash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/success-flash */ "./resources/js/components/success-flash.vue");
+/* harmony import */ var _Jetstream_DialogModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/DialogModal */ "./resources/js/Jetstream/DialogModal.vue");
+
 
 
 
@@ -19451,12 +19453,16 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     paging: _components_paging__WEBPACK_IMPORTED_MODULE_1__.default,
-    SuccessFlash: _components_success_flash__WEBPACK_IMPORTED_MODULE_2__.default
+    SuccessFlash: _components_success_flash__WEBPACK_IMPORTED_MODULE_2__.default,
+    JetDialogModal: _Jetstream_DialogModal__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
+      modal: false,
       rests: [],
       id: this.user_id,
+      img: '',
+      selectedRest: '',
       links: []
     };
   },
@@ -19485,15 +19491,31 @@ __webpack_require__.r(__webpack_exports__);
         console.log(err);
       });
     },
-    getQR: function getQR(id) {
-      console.log(id);
+    getQR: function getQR(id, name) {
+      // console.log(id);
       var uri = "/qr/" + id;
-      axios.get(uri).then(function (resp) {
-        console.log(resp); // this.links = resp.data;
-        // this.rests = this.links.data;
-      })["catch"](function (err) {
-        console.log(err);
-      });
+      this.selectedRest = name;
+      this.img = uri; // axios.get(uri)
+      //     .then(resp => {
+      //         console.log(resp);
+      //         // this.links = resp.data;
+      //         // this.rests = this.links.data;
+      //         let rep = resp.data.qr;
+      //         let helper = rep.replace( /\\/g , "");
+      //         console.log(helper);
+      //         this.img = helper;
+      //     })
+      //     .catch(err => {
+      //         console.log(err);
+      //     });
+      // Prendemos modal
+
+      this.modal = true;
+    },
+    closeModal: function closeModal() {
+      this.selectedRest = '';
+      this.img = '';
+      this.modal = false;
     }
   }
 });
@@ -26361,8 +26383,15 @@ var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 var _hoisted_32 = {
   "class": "flex flex-wrap -mb-1"
 };
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Cancel ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_success_flash = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("success-flash");
+
+  var _component_jet_secondary_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-secondary-button");
+
+  var _component_jet_dialog_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-dialog-modal");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -26411,7 +26440,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           target: "_blank"
         }, " QR ", 8
         /* PROPS */
-        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\" data-bs-toggle=\"modal\" :data-bs-target=\"'#Modal' + rest.id \"> QR </a> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\" data-bs-toggle=\"modal\" :data-bs-target=\"'#Modal' + rest.id \"> QR </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+          "class": "bg-green-600",
+          onClick: function onClick($event) {
+            return $options.getQR(rest.id, rest.name);
+          }
+        }, " view ", 8
+        /* PROPS */
+        , ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img :src=\"\" alt=\"img\" > ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'restaurant/' + rest.id + '/edit'
         }, " Edit ", 8
         /* PROPS */
@@ -26448,7 +26484,46 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         );
       }), 128
       /* KEYED_FRAGMENT */
-      ))])])])];
+      ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_dialog_modal, {
+        show: $data.modal,
+        onClose: $options.closeModal
+      }, {
+        title: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.selectedRest), 1
+          /* TEXT */
+          )];
+        }),
+        content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <iframe type=\"text/plain\" frameborder=\"0\"\n                  :data-bind=\"img\" >\n                </iframe> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("iframe", {
+            src: $data.img,
+            frameborder: "0",
+            height: "315",
+            width: "325",
+            "class": "mx-auto"
+          }, null, 8
+          /* PROPS */
+          , ["src"])];
+        }),
+        footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_secondary_button, {
+            onClick: $options.closeModal
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [_hoisted_33];
+            }),
+            _: 1
+            /* STABLE */
+
+          }, 8
+          /* PROPS */
+          , ["onClick"])];
+        }),
+        _: 1
+        /* STABLE */
+
+      }, 8
+      /* PROPS */
+      , ["show", "onClose"])];
     }),
     _: 1
     /* STABLE */
