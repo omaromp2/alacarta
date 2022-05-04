@@ -119,13 +119,11 @@
 
                     <h1 class="px-2 text-sm">
                         <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                        <a :href="'qr/' + rest.id " target="_blank" > QR </a>
+                        <!-- <a :href="'qr/' + rest.id " target="_blank" > QR </a> -->
 
                         <!-- <a href="#" data-bs-toggle="modal" :data-bs-target="'#Modal' + rest.id "> QR </a> -->
 
-                        <button class="bg-green-600"  @click="getQR(rest.id, rest.name)" > view </button>
-
-                        <!-- <img :src="" alt="img" > -->
+                        <a href="#" @click="getQR(rest.id, rest.name)" > QR </a>
 
                     </h1>
 
@@ -196,13 +194,13 @@
                   :data-bind="img" >
                 </iframe> -->
 
-                <iframe :src="img" frameborder="0" height="315" width="325" class="mx-auto" ></iframe>
+                <iframe :src="img" frameborder="0" height="350" width="325" class="mx-auto" ></iframe>
 
             </template>
             <template #footer>
-                <jet-secondary-button @click="closeModal">
+                <jet-button @click="closeModal">
                     Cancel
-                </jet-secondary-button>
+                </jet-button>
             </template>
         </jet-dialog-modal>
 
@@ -219,6 +217,7 @@
     import paging from '@/components/paging'
     import SuccessFlash from '@/components/success-flash'
     import JetDialogModal from '@/Jetstream/DialogModal'
+    import JetButton from "@/Jetstream/Button";
 
     export default {
         props: ['user_id'],
@@ -226,7 +225,8 @@
             AppLayout,
             paging,
             SuccessFlash,
-            JetDialogModal
+            JetDialogModal,
+            JetButton
         },
         data() {
             return {

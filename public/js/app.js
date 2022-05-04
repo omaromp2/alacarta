@@ -19444,6 +19444,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_paging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/paging */ "./resources/js/components/paging.vue");
 /* harmony import */ var _components_success_flash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/success-flash */ "./resources/js/components/success-flash.vue");
 /* harmony import */ var _Jetstream_DialogModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/DialogModal */ "./resources/js/Jetstream/DialogModal.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+
 
 
 
@@ -19454,7 +19456,8 @@ __webpack_require__.r(__webpack_exports__);
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     paging: _components_paging__WEBPACK_IMPORTED_MODULE_1__.default,
     SuccessFlash: _components_success_flash__WEBPACK_IMPORTED_MODULE_2__.default,
-    JetDialogModal: _Jetstream_DialogModal__WEBPACK_IMPORTED_MODULE_3__.default
+    JetDialogModal: _Jetstream_DialogModal__WEBPACK_IMPORTED_MODULE_3__.default,
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_4__.default
   },
   data: function data() {
     return {
@@ -26389,7 +26392,7 @@ var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_success_flash = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("success-flash");
 
-  var _component_jet_secondary_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-secondary-button");
+  var _component_jet_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button");
 
   var _component_jet_dialog_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-dialog-modal");
 
@@ -26435,19 +26438,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           href: 'menu?rest=' + rest.id
         }, " Menu ", 8
         /* PROPS */
-        , ["href"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-          href: 'qr/' + rest.id,
-          target: "_blank"
-        }, " QR ", 8
-        /* PROPS */
-        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\" data-bs-toggle=\"modal\" :data-bs-target=\"'#Modal' + rest.id \"> QR </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-          "class": "bg-green-600",
+        , ["href"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a :href=\"'qr/' + rest.id \" target=\"_blank\" > QR </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\" data-bs-toggle=\"modal\" :data-bs-target=\"'#Modal' + rest.id \"> QR </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+          href: "#",
           onClick: function onClick($event) {
             return $options.getQR(rest.id, rest.name);
           }
-        }, " view ", 8
+        }, " QR ", 8
         /* PROPS */
-        , ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img :src=\"\" alt=\"img\" > ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+        , ["onClick"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'restaurant/' + rest.id + '/edit'
         }, " Edit ", 8
         /* PROPS */
@@ -26497,7 +26495,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <iframe type=\"text/plain\" frameborder=\"0\"\n                  :data-bind=\"img\" >\n                </iframe> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("iframe", {
             src: $data.img,
             frameborder: "0",
-            height: "315",
+            height: "350",
             width: "325",
             "class": "mx-auto"
           }, null, 8
@@ -26505,7 +26503,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           , ["src"])];
         }),
         footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_secondary_button, {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
             onClick: $options.closeModal
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
