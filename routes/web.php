@@ -43,13 +43,14 @@ Route::get('rest/{restaurant}', [RestaurantController::class, 'showClient']);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    // Route::middleware('billing')->get('/dashboard', function () {
-    //     return Inertia::render('Dashboard');
-    // })->name('dashboard');
+    Route::middleware('billing')->get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-    Route::get('/dashboard', function () {
-            return Inertia::render('Dashboard');
-        })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //         return Inertia::render('Dashboard');
+    //     })
+    //     ->name('dashboard');
 
     // Restaurants
     Route::resource('restaurant', RestaurantController::class)
