@@ -877,16 +877,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.2",
+            "version": "7.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4"
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ac1ec1cd9b5624694c3a40be801d94137afb12b4",
-                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
                 "shasum": ""
             },
             "require": {
@@ -981,7 +981,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
             },
             "funding": [
                 {
@@ -997,7 +997,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-20T14:16:28+00:00"
+            "time": "2022-05-25T13:24:33+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1404,16 +1404,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.10.1",
+            "version": "v13.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "87dea211bf6001b7e0006f710a8c3e6a1c6f8dc4"
+                "reference": "7a762f51c1d417125cc349aadd7f70e1a345f8d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/87dea211bf6001b7e0006f710a8c3e6a1c6f8dc4",
-                "reference": "87dea211bf6001b7e0006f710a8c3e6a1c6f8dc4",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/7a762f51c1d417125cc349aadd7f70e1a345f8d8",
+                "reference": "7a762f51c1d417125cc349aadd7f70e1a345f8d8",
                 "shasum": ""
             },
             "require": {
@@ -1431,7 +1431,7 @@
                 "moneyphp/money": "^3.2|^4.0",
                 "nesbot/carbon": "^2.0",
                 "php": "^7.3|^8.0",
-                "stripe/stripe-php": "^7.39",
+                "stripe/stripe-php": "^7.39|^8.0",
                 "symfony/http-kernel": "^5.0|^6.0",
                 "symfony/polyfill-intl-icu": "^1.22.1"
             },
@@ -1468,6 +1468,10 @@
                 {
                     "name": "Taylor Otwell",
                     "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "email": "dries@laravel.com"
                 }
             ],
             "description": "Laravel Cashier provides an expressive, fluent interface to Stripe's subscription billing services.",
@@ -1480,7 +1484,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2022-05-05T13:37:18+00:00"
+            "time": "2022-05-17T15:38:08+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -1547,16 +1551,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.12.2",
+            "version": "v9.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810"
+                "reference": "2ca86f96118635a79ee3389013ccab110ae14bea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b5b5c635f1a93f277b5248725a1f7ffc97e20810",
-                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2ca86f96118635a79ee3389013ccab110ae14bea",
+                "reference": "2ca86f96118635a79ee3389013ccab110ae14bea",
                 "shasum": ""
             },
             "require": {
@@ -1722,20 +1726,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-05-11T13:38:26+00:00"
+            "time": "2022-05-25T18:18:07+00:00"
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.8.0",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "4aafe1f26dba30dff8dcb1420f0fb534ba3c7271"
+                "reference": "10a7914447c24f8ac9c6565c41f9f10711807401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/4aafe1f26dba30dff8dcb1420f0fb534ba3c7271",
-                "reference": "4aafe1f26dba30dff8dcb1420f0fb534ba3c7271",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/10a7914447c24f8ac9c6565c41f9f10711807401",
+                "reference": "10a7914447c24f8ac9c6565c41f9f10711807401",
                 "shasum": ""
             },
             "require": {
@@ -1788,7 +1792,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2022-05-10T14:20:57+00:00"
+            "time": "2022-05-24T13:49:23+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1857,16 +1861,16 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "9e4b005daa20b0c161f3845040046dc9ddc1d74e"
+                "reference": "09f0e9fb61829f628205b7c94906c28740ff9540"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/9e4b005daa20b0c161f3845040046dc9ddc1d74e",
-                "reference": "9e4b005daa20b0c161f3845040046dc9ddc1d74e",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/09f0e9fb61829f628205b7c94906c28740ff9540",
+                "reference": "09f0e9fb61829f628205b7c94906c28740ff9540",
                 "shasum": ""
             },
             "require": {
@@ -1912,7 +1916,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2022-02-11T19:23:53+00:00"
+            "time": "2022-05-16T17:09:47+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1984,16 +1988,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955"
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/32a49eb2b38fe5e5c417ab748a45d0beaab97955",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
                 "shasum": ""
             },
             "require": {
@@ -2086,7 +2090,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-07T22:37:05+00:00"
+            "time": "2022-05-14T15:37:39+00:00"
         },
         {
             "name": "league/config",
@@ -2374,23 +2378,23 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moneyphp/money.git",
-                "reference": "d945f775bd6ab0920d9d205813d8831a899a8844"
+                "reference": "efe904ab6109d87046eb624d5dff7d270fd0cca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/d945f775bd6ab0920d9d205813d8831a899a8844",
-                "reference": "d945f775bd6ab0920d9d205813d8831a899a8844",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/efe904ab6109d87046eb624d5dff7d270fd0cca5",
+                "reference": "efe904ab6109d87046eb624d5dff7d270fd0cca5",
                 "shasum": ""
             },
             "require": {
                 "ext-bcmath": "*",
                 "ext-filter": "*",
                 "ext-json": "*",
-                "php": "^8.0"
+                "php": "~8.0.0 || ~8.1.0"
             },
             "require-dev": {
                 "cache/taggable-cache": "^1.1.0",
@@ -2403,12 +2407,11 @@
                 "moneyphp/iso-currencies": "^3.2.1",
                 "php-http/message": "^1.11.0",
                 "php-http/mock-client": "^1.4.1",
-                "phpbench/phpbench": "1.0.0-beta1@BETA",
-                "phpspec/phpspec": "^7.0.1",
+                "phpbench/phpbench": "^1.2.5",
+                "phpspec/phpspec": "^7.2",
                 "phpunit/phpunit": "^9.5.4",
                 "psalm/plugin-phpunit": "^0.15.1",
                 "psr/cache": "^1.0.1",
-                "roave/infection-static-analysis-plugin": "^1.7",
                 "vimeo/psalm": "~4.7.0 || ^4.8.2"
             },
             "suggest": {
@@ -2457,9 +2460,9 @@
             ],
             "support": {
                 "issues": "https://github.com/moneyphp/money/issues",
-                "source": "https://github.com/moneyphp/money/tree/v4.0.3"
+                "source": "https://github.com/moneyphp/money/tree/v4.0.4"
             },
-            "time": "2021-12-01T10:39:00+00:00"
+            "time": "2022-05-18T19:32:15+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3925,16 +3928,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.128.0",
+            "version": "v8.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "c704949c49b72985c76cc61063aa26fefbd2724e"
+                "reference": "01d87fed82d624d3261cf9a302419c7581e05a60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c704949c49b72985c76cc61063aa26fefbd2724e",
-                "reference": "c704949c49b72985c76cc61063aa26fefbd2724e",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/01d87fed82d624d3261cf9a302419c7581e05a60",
+                "reference": "01d87fed82d624d3261cf9a302419c7581e05a60",
                 "shasum": ""
             },
             "require": {
@@ -3979,9 +3982,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.128.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v8.3.0"
             },
-            "time": "2022-05-05T17:18:02+00:00"
+            "time": "2022-05-23T19:57:31+00:00"
         },
         {
             "name": "symfony/console",
@@ -6807,16 +6810,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.2",
+            "version": "v1.14.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "cee088fbe57432dd15678e3f7b6a8259f3073c46"
+                "reference": "c049316f9bcb02598607307f18b514b66202b639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/cee088fbe57432dd15678e3f7b6a8259f3073c46",
-                "reference": "cee088fbe57432dd15678e3f7b6a8259f3073c46",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639",
                 "shasum": ""
             },
             "require": {
@@ -6863,7 +6866,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-05-10T12:58:49+00:00"
+            "time": "2022-05-21T17:14:14+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8870,16 +8873,16 @@
         },
         {
             "name": "spatie/flare-client-php",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/flare-client-php.git",
-                "reference": "1059fd8f229fa016b11063c6be9d1922d036adb7"
+                "reference": "86a380f5b1ce839af04a08f1c8f2697184cdf23f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/1059fd8f229fa016b11063c6be9d1922d036adb7",
-                "reference": "1059fd8f229fa016b11063c6be9d1922d036adb7",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/86a380f5b1ce839af04a08f1c8f2697184cdf23f",
+                "reference": "86a380f5b1ce839af04a08f1c8f2697184cdf23f",
                 "shasum": ""
             },
             "require": {
@@ -8927,7 +8930,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
-                "source": "https://github.com/spatie/flare-client-php/tree/1.1.1"
+                "source": "https://github.com/spatie/flare-client-php/tree/1.2.0"
             },
             "funding": [
                 {
@@ -8935,20 +8938,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-11T09:43:07+00:00"
+            "time": "2022-05-16T12:13:39+00:00"
         },
         {
             "name": "spatie/ignition",
-            "version": "1.2.10",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "dd8c3a21170b1d0f4d15048b2f4fa4a1a3a92a64"
+                "reference": "997363fbcce809b1e55f571997d49017f9c623d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/dd8c3a21170b1d0f4d15048b2f4fa4a1a3a92a64",
-                "reference": "dd8c3a21170b1d0f4d15048b2f4fa4a1a3a92a64",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/997363fbcce809b1e55f571997d49017f9c623d9",
+                "reference": "997363fbcce809b1e55f571997d49017f9c623d9",
                 "shasum": ""
             },
             "require": {
@@ -8969,6 +8972,11 @@
                 "symfony/process": "^5.4|^6.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\Ignition\\": "src"
@@ -9005,7 +9013,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-10T12:21:27+00:00"
+            "time": "2022-05-16T13:16:07+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
@@ -9157,5 +9165,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
