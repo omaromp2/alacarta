@@ -195,7 +195,7 @@ class RestaurantController extends Controller
 
         // $appUrl = "https://de18-64-89-2-177.ngrok.io/";
 
-        return QrCode::size(300)->generate( $appUrl . "rest/".$rest);
+        return QrCode::size(300)->generate( $appUrl . "/rest/".$rest);
 
     }
 
